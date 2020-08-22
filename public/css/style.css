@@ -1,0 +1,67 @@
+body{
+    margin:0;
+}
+
+.headband, footer{
+    height: 30px;
+    background-color: rgb(51, 51, 51);
+}
+
+.logo{
+    text-align: center;
+}
+
+.menu{
+    
+    margin:auto;
+    display: flex;
+    justify-content: flex-start;
+    width: 70%;
+}
+
+.buttonMenu{
+    
+    width: 110px;
+    padding: 15px;
+    text-align: center;
+    list-style: none;
+}
+
+.menu a{
+    text-decoration:none;
+    color:black;
+    font-size: 1.1em;
+    font-family: 'Unica One', cursive;
+}
+
+.accueil{
+    border-bottom: 4px solid rgb(118, 188, 195);
+}
+
+.banniere{
+    position: relative;
+}
+
+.paysage{ 
+    width: 100%;
+}
+
+.portrait{
+    position: absolute;
+    top: 70%;
+    left: 70%;
+    width: 15%;
+    padding:10px;
+    background-color: white;
+    position: absolute;
+    top: 70%;
+    left: 70%;
+}
+
+
+
+
+
+
+
+
