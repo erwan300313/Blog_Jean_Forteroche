@@ -9,6 +9,7 @@ body{
 
 .logo{
     text-align: center;
+    margin: 0px;
 }
 
 .menu{
@@ -46,14 +47,12 @@ body{
 
 .portrait{
     position: absolute;
-    top: 70%;
+    top: 60%;
     left: 70%;
-    width: 15%;
+    width: 12%;
     padding:10px;
     background-color: white;
     position: absolute;
-    top: 70%;
-    left: 70%;
 }
 
 footer{
@@ -95,12 +94,3 @@ footer a, .copyright{
     text-align: center;
     font-family: 'Unica One', cursive;
 }
-
-
-
-
-
-
-
-
-

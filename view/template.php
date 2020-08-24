@@ -26,10 +26,9 @@
                 <img src="../public/img/jean_f.jpg" alt="Portrait de Jean Forteroche" class="portrait">
             </div>
         </head>
-        
-        
-        <?= $content ?>
-        
+        <section>
+            <?= $content ?>
+        </section>
         <footer>
             <div class="footer_block">
                 <ul class="footer_menu">
@@ -46,7 +45,6 @@
                 </ul>
             </div>
             <p class='copyright'>Copyright © 2020 | Bridier Corporation | Billet simple pour l'Alaska </p>
-
         </footer>
     </body>
 </html>
