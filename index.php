@@ -7,7 +7,7 @@ try { // On essaie de faire des choses
         
     }
     else {
-        listPosts();
+        indexPosts();
     }
 }
 catch(Exception $e) { // S'il y a eu une erreur, alors...

@@ -100,7 +100,6 @@ footer a, .copyright{
 /*style indexView*/
 
 .section{
-    border: 1px solid black;
     width: 1200px;
     margin: auto;
 }
@@ -114,3 +113,8 @@ footer a, .copyright{
     width: 350px;
     text-align: justify;
 }
+
+.readMore{
+    color: rgb(120, 189, 196);
+}
+

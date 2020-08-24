@@ -3,9 +3,10 @@
 // Chargement des classes
 require_once('model/postManager.php');
 
-function listPosts()
+function indexPosts()
 {
     $postManager = new PostManager(); // Création de l'objet
-    $posts = $postManager->getPosts(); // Appel de la fonction getPosts
+    $bio = $postManager->getBio(); // Appel de la fonction getBio
+    $syn = $postManager->getSyn(); // Appel de la fonction getSyn
     require('view/indexView.php');
 }

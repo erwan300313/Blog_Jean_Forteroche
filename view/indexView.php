@@ -3,33 +3,29 @@
 <?php ob_start(); ?>
 <section class="section">
     <section class="firstSection"> 
-        <?php
-        while ($data = $posts->fetch()){
-            if($data['id'] == '1'){
-            ?>
+        
                 <article class="biography">
                     <h2>Biographie</h2>
-                    <p>publié le <?=$data['date_creation']?></p>
                     <p>
-                        <?= htmlspecialchars($data['author'])?><br/>
-                        <?= nl2br(htmlspecialchars($data['content'])) ?>
+                        Publié le <?=$syn['date_creation']?> Par <?= htmlspecialchars($syn['author'])?>
+                    </p>
+                    <p>
+                        <?= nl2br(htmlspecialchars($bio['content'])) ?>
+                        ... <a href="" class="readMore">Lire la suite</a>
                     </p>
                 </article>
-            <?php
-            }
-            if($data['id'] == '2'){
-            ?>
+            
                 <article class="synopsys">
                     <h2>Synopsys</h2>
-                    <p>publié le <?=$data['date_creation']?></p>
                     <p>
-                        <?= htmlspecialchars($data['author'])?><br/>
-                        <?= htmlspecialchars($data['content']) ?>
+                        Publié le <?=$syn['date_creation']?> Par <?= htmlspecialchars($syn['author'])?>
+                    </p>
+                    <p>
+                        <?= htmlspecialchars($syn['content']) ?>
+                        ... <a href="" class="readMore">Lire la suite</a>
                     </p>
                 </article>
-            <?php
-            }}
-            ?>
+            
     </section>
 </section>
 
