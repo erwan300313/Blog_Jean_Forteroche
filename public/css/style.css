@@ -2,7 +2,7 @@ body{
     margin:0;
 }
 
-.headband, footer{
+.headband{
     height: 30px;
     background-color: rgb(51, 51, 51);
 }
@@ -12,7 +12,6 @@ body{
 }
 
 .menu{
-    
     margin:auto;
     display: flex;
     justify-content: flex-start;
@@ -20,14 +19,13 @@ body{
 }
 
 .buttonMenu{
-    
     width: 110px;
     padding: 15px;
     text-align: center;
     list-style: none;
 }
 
-.menu a{
+.menu a, footer a{
     text-decoration:none;
     color:black;
     font-size: 1.1em;
@@ -57,6 +55,47 @@ body{
     top: 70%;
     left: 70%;
 }
+
+footer{
+    background-color: rgb(51, 51, 51);
+    height: 90px;
+}
+
+footer ul{
+    text-align: center;
+    list-style: none;
+}
+
+footer a, .copyright{
+    color: white;
+}
+
+.footer_block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer_menu{
+    display: flex;
+    margin:0px;
+}
+
+.footer_social_network{
+    display: flex;
+    font-size: 2.5em;
+    justify-content: space-between;
+    padding: 6px 0px 0px 100px;
+    width: 200px;
+    margin:0px;
+}
+
+.copyright{
+    margin:0px;
+    text-align: center;
+    font-family: 'Unica One', cursive;
+}
+
 
 
 
