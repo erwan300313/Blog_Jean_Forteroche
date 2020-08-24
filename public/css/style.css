@@ -1,5 +1,7 @@
+/*Style template*/
 body{
     margin:0;
+    font-family: 'Unica One', cursive;
 }
 
 .headband{
@@ -93,4 +95,22 @@ footer a, .copyright{
     margin:0px;
     text-align: center;
     font-family: 'Unica One', cursive;
+}
+
+/*style indexView*/
+
+.section{
+    border: 1px solid black;
+    width: 1200px;
+    margin: auto;
+}
+.firstSection{
+    width: 800px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.biography, .synopsys{
+    width: 350px;
+    text-align: justify;
 }

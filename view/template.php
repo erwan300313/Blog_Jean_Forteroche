@@ -2,8 +2,8 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Billet simple pour l'Alaska</title>
-        <link href="../public/css/style.css" rel="stylesheet" /> 
+        <title><?= $title ?></title>
+        <link href="public/css/style.css" rel="stylesheet" /> 
         <link href="https://fonts.googleapis.com/css2?family=Unica+One&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/fc001796a0.js" crossorigin="anonymous"></script>
 
@@ -12,7 +12,7 @@
     <body>
         <head>
             <div class="headband"></div>
-            <p class="logo"><img src="../public/img/logo_400.png" alt="logo de Jean"></p>
+            <p class="logo"><img src="public/img/logo_400.png" alt="logo de Jean"></p>
             <nav>
                 <ul class="menu">
                     <li class="buttonMenu accueil"><a href="">Accueil</a></li>
@@ -22,13 +22,13 @@
                 </ul>
             </nav>
             <div class="banniere">
-                <img src="../public/img/banniere.jpg" alt="paysage Alaska" class="paysage">
-                <img src="../public/img/jean_f.jpg" alt="Portrait de Jean Forteroche" class="portrait">
+                <img src="public/img/banniere.jpg" alt="paysage Alaska" class="paysage">
+                <img src="public/img/jean_f.jpg" alt="Portrait de Jean Forteroche" class="portrait">
             </div>
         </head>
-        <section>
+        
             <?= $content ?>
-        </section>
+        
         <footer>
             <div class="footer_block">
                 <ul class="footer_menu">
