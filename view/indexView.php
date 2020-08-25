@@ -2,7 +2,7 @@
 
 <?php ob_start(); ?>
 <section class="section">
-    <section class="firstSection"> 
+    <section class="leftSection"> 
         
                 <article class="biography">
                     <h2>Biographie</h2>
@@ -24,8 +24,16 @@
                         <?= htmlspecialchars($syn['content']) ?>
                         ... <a href="" class="readMore">Lire la suite</a>
                     </p>
-                </article>
-            
+                </article> 
+    </section>
+    <section class="rightSection">
+        <article class="lastUser">
+
+            <h3>Nouveau membre</h3>
+            <p>Bienvenue à <?=htmlspecialchars($lastUser['pseudo'])?></p>
+            <p>Inscrit le <?=htmlspecialchars($lastUser['date_inscirption'])?></p>
+
+        </article>    
     </section>
 </section>
 

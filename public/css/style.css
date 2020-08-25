@@ -31,7 +31,7 @@ body{
 .menu a, footer a{
     text-decoration:none;
     color:black;
-    font-size: 1.1em;
+    font-size: 1.3em;
     font-family: 'Unica One', cursive;
 }
 
@@ -102,15 +102,29 @@ footer a, .copyright{
 .section{
     width: 1200px;
     margin: auto;
+    display: flex;
+    justify-content: space-between;
 }
-.firstSection{
-    width: 800px;
+.leftSection{
+    width: 950px;
     display: flex;
     justify-content: space-around;
 }
 
+.leftSection h2, .rightSection h3{
+    text-decoration: underline;
+}
+
+.rightSection{
+    width: 249px;
+    height: 130px;
+    margin-top: 40px;
+    text-align: center;
+    border: 2px solid rgb(120, 189, 196);
+}
+
 .biography, .synopsys{
-    width: 350px;
+    width: 420px;
     text-align: justify;
 }
 
