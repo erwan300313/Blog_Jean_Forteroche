@@ -107,8 +107,8 @@ footer a, .copyright{
 }
 .leftSection{
     width: 950px;
-    display: flex;
-    justify-content: space-around;
+    /*display: flex;
+    justify-content: space-around;*/
 }
 
 .leftSection h2, .rightSection h3{
@@ -139,6 +139,7 @@ footer a, .copyright{
 .biography, .synopsys{
     width: 420px;
     text-align: justify;
+    display: inline-block;
 }
 
 .readMore{

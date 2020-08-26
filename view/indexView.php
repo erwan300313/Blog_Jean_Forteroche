@@ -3,28 +3,38 @@
 <?php ob_start(); ?>
 <section class="section">
     <section class="leftSection"> 
-        
-                <article class="biography">
-                    <h2>Biographie</h2>
-                    <p>
-                        Publié le <?=$syn['date_creation']?> Par <?= htmlspecialchars($syn['author'])?>
-                    </p>
-                    <p>
-                        <?= nl2br(htmlspecialchars($bio['content'])) ?>
-                        ... <a href="" class="readMore">Lire la suite</a>
-                    </p>
-                </article>
-            
-                <article class="synopsys">
-                    <h2>Synopsys</h2>
-                    <p>
-                        Publié le <?=$syn['date_creation']?> Par <?= htmlspecialchars($syn['author'])?>
-                    </p>
-                    <p>
-                        <?= htmlspecialchars($syn['content']) ?>
-                        ... <a href="" class="readMore">Lire la suite</a>
-                    </p>
-                </article> 
+        <article class="biography">
+            <h2>Biographie</h2>
+            <p>
+                Publié le <?=$syn['date_creation']?> Par <?= htmlspecialchars($syn['author'])?>
+            </p>
+            <p>
+                <?= nl2br(htmlspecialchars($bio['content'])) ?>
+                ... <a href="" class="readMore">Lire la suite</a>
+            </p>
+        </article>
+    
+        <article class="synopsys">
+            <h2>Synopsys</h2>
+            <p>
+                Publié le <?=$syn['date_creation']?> Par <?= htmlspecialchars($syn['author'])?>
+            </p>
+            <p>
+                <?= htmlspecialchars($syn['content']) ?>
+                ... <a href="" class="readMore">Lire la suite</a>
+            </p>
+        </article> 
+        <article class="firstPost">
+            <?php
+            while ($data = $indexPost->fetch())
+            {
+            ?>
+            <h2><?=$data['title']?> publié le <?=$data['date_creation']?></h2>
+            <p><?=$data['content']?></p>
+            <?php
+            }
+            ?>
+        </article>
     </section>
     <section class="rightSection">
         <article class="lastUser">
