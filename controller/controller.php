@@ -10,6 +10,7 @@ function indexPosts()
     $userManager = new UserManager();
     $bio = $postManager->getBio(); // Appel de la fonction getBio
     $syn = $postManager->getSyn(); // Appel de la fonction getSyn
+    $lastPost = $postManager->lastPost();
     $lastUser = $userManager->getLastUser();
     require('view/indexView.php');
 }

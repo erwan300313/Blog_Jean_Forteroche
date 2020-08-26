@@ -33,7 +33,16 @@
             <p>Bienvenue à <?=htmlspecialchars($lastUser['pseudo'])?></p>
             <p>Inscrit le <?=htmlspecialchars($lastUser['date_inscirption'])?></p>
 
-        </article>    
+        </article>   
+        <article class="lastPost">
+            <h3>Dernier post</h3>
+            <h4><?=htmlspecialchars($lastPost['title'])?></h4>
+            <p>publié par <?=htmlspecialchars($lastPost['author'])?><br /> le <?=htmlspecialchars($lastPost['date_creation'])?></p>
+            <p>
+                <?=htmlspecialchars($lastPost['content'])?>
+                ... <a href="" class="readMore">Lire la suite</a>
+            </p>
+        </article> 
     </section>
 </section>
 

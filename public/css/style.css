@@ -117,10 +117,23 @@ footer a, .copyright{
 
 .rightSection{
     width: 249px;
-    height: 130px;
     margin-top: 40px;
     text-align: center;
+}
+
+.lastUser{
     border: 2px solid rgb(120, 189, 196);
+    height: 130px;
+}
+
+.lastPost{
+    border: 2px solid rgb(120, 189, 196);
+    margin-top: 20px;
+    padding: 8px;;
+}
+
+.lastUser, .lastPost{
+    box-shadow: 2px 2px 2Px black;
 }
 
 .biography, .synopsys{
