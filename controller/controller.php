@@ -7,13 +7,26 @@ require_once('model/variousManager.php');
 
 function indexPosts()
 {
-    $postManager = new PostManager(); // Création de l'objet
-    $userManager = new UserManager();
+    require('rightBlockController.php');
     $variousManager = new VariousManager();
-    $bio = $variousManager->getBio(); // Appel de la fonction getBio
-    $syn = $variousManager->getSyn(); // Appel de la fonction getSyn
-    $lastPost = $postManager->lastPost();
+    $bio = $variousManager->getExtractBio(); // Appel de la fonction getBio
+    $syn = $variousManager->getExtractSyn(); // Appel de la fonction getSyn
     $indexPost = $postManager->indexPost();
-    $lastUser = $userManager->getLastUser();
     require('view/indexView.php');
+}
+
+function various($id)
+{
+    require('rightBlockController.php');
+    $variousManager = new VariousManager();
+    $getVarious = $variousManager->getVarious($id);
+    require('view/variousView.php');
+}
+
+function about()
+{
+    require('rightBlockController.php');
+    $variousManager = new VariousManager();
+    $getFullVarious = $variousManager->getFullVarious();
+    require('view/aboutView.php');
 }

@@ -97,18 +97,14 @@ footer a, .copyright{
     font-family: 'Unica One', cursive;
 }
 
-/*style indexView*/
-
 .section{
-    width: 1200px;
+    width:82%;
     margin: auto;
     display: flex;
     justify-content: space-between;
 }
 .leftSection{
-    width: 950px;
-    /*display: flex;
-    justify-content: space-around;*/
+    width: 80%;
 }
 
 .leftSection h2, .rightSection h3{
@@ -122,27 +118,48 @@ footer a, .copyright{
 }
 
 .lastUser{
-    border: 2px solid rgb(120, 189, 196);
     height: 130px;
 }
 
 .lastPost{
-    border: 2px solid rgb(120, 189, 196);
     margin-top: 20px;
     padding: 8px;;
 }
 
 .lastUser, .lastPost{
     box-shadow: 2px 2px 2Px black;
+    border: 2px solid rgb(120, 189, 196);
 }
 
-.biography, .synopsys{
-    width: 420px;
+.biography, .synopsys, .firstPost{
+    width:44%;
+    margin-left: 40px;
     text-align: justify;
     display: inline-block;
 }
 
+.leftSection h2{
+    text-align: center;
+}
+
+.lowerBlock{
+   border-top: 2px solid  rgb(120, 189, 196); 
+   border-left: 2px solid  rgb(120, 189, 196);
+}
+
 .readMore{
-    color: rgb(120, 189, 196);
+    padding: 1px 4Px;
+    background-color: rgb(120, 189, 196);
+    color: white;
+    border-radius: 5px;;
+}
+
+.leftBlock{
+    text-align: justify;
+    margin: 0px 40px;
+}
+
+.homePage a{
+    color: rgb(109, 170, 177);
 }
 

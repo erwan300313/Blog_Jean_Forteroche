@@ -16,7 +16,7 @@
             <nav>
                 <ul class="menu">
                     <li class="buttonMenu accueil"><a href="">Accueil</a></li>
-                    <li class="buttonMenu a_propos"><a href="">A propos</a></li>
+                    <li class="buttonMenu a_propos"><a href="index.php?action=about">A propos</a></li>
                     <li class="buttonMenu blog"><a href="">Blog</a></li>
                     <li class="buttonMenu contact"><a href="">Contact</a></li>
                 </ul>
@@ -26,9 +26,29 @@
                 <img src="public/img/jean_f.jpg" alt="Portrait de Jean Forteroche" class="portrait">
             </div>
         </head>
-        
-            <?= $content ?>
-        
+        <section class="section">
+            <section class="leftSection"> 
+                <?= $content ?>
+            </section>
+            <section class="rightSection">
+                <article class="lastUser">
+
+                    <h3>Nouveau membre</h3>
+                    <p>Bienvenue à <?=htmlspecialchars($lastUser['pseudo'])?></p>
+                    <p>Inscrit le <?=htmlspecialchars($lastUser['date_inscirption'])?></p>
+
+                </article>   
+                <article class="lastPost">
+                    <h3>Dernier post</h3>
+                    <h4><?=htmlspecialchars($lastPost['title'])?></h4>
+                    <p>publié par <?=htmlspecialchars($lastPost['author'])?><br /> le <?=htmlspecialchars($lastPost['date_creation'])?></p>
+                    <p>
+                        <?=htmlspecialchars($lastPost['content'])?>
+                        ... <a href="index.php?action=post&amp;id=<?=$lastPost['id']?>" class="readMore">Lire la suite</a>
+                    </p>
+                </article> 
+            </section>
+        </section>
         <footer>
             <div class="footer_block">
                 <ul class="footer_menu">
