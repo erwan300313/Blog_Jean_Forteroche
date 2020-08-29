@@ -15,9 +15,9 @@
             <p class="logo"><img src="public/img/logo_400.png" alt="logo de Jean"></p>
             <nav>
                 <ul class="menu">
-                    <li class="buttonMenu accueil"><a href="">Accueil</a></li>
+                    <li class="buttonMenu accueil"><a href="index.php">Accueil</a></li>
                     <li class="buttonMenu a_propos"><a href="index.php?action=about">A propos</a></li>
-                    <li class="buttonMenu blog"><a href="">Blog</a></li>
+                    <li class="buttonMenu blog"><a href="index.php?action=blog#leftBlock">Blog</a></li>
                     <li class="buttonMenu contact"><a href="">Contact</a></li>
                 </ul>
             </nav>
@@ -32,11 +32,9 @@
             </section>
             <section class="rightSection">
                 <article class="lastUser">
-
                     <h3>Nouveau membre</h3>
                     <p>Bienvenue à <?=htmlspecialchars($lastUser['pseudo'])?></p>
                     <p>Inscrit le <?=htmlspecialchars($lastUser['date_inscirption'])?></p>
-
                 </article>   
                 <article class="lastPost">
                     <h3>Dernier post</h3>

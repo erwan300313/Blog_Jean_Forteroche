@@ -30,3 +30,17 @@ function about()
     $getFullVarious = $variousManager->getFullVarious();
     require('view/aboutView.php');
 }
+
+function posts()
+{
+    require('rightBlockController.php');
+    $getPosts = $postManager->getPosts();
+    require('view/blogView.php');
+}
+
+function post($id)
+{
+    require('rightBlockController.php');
+    $getPost = $postManager->getPost($id);
+    require('view/postView.php');
+}
