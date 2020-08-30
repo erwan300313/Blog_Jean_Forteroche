@@ -35,4 +35,15 @@ class PostManager extends Manager
         $getPost = $req->fetch();
         return $getPost;
     }
+
+    public function getExtractPost($id)
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare('SELECT id,author, title, LEFT( content, 600 ) AS content, DATE_FORMAT(date_creation, \'%d/%m/%Y\') AS date_creation FROM posts WHERE id = ?');
+        $req->execute(array($id));
+        $getPost = $req->fetch();
+        return $getPost;
+    }
+
+
 }

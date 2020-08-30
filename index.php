@@ -33,6 +33,9 @@ try { // On essaie de faire des choses
                 throw new Exception('Page Web inaccessible.');
             }
         }
+        elseif($_GET['action'] == 'comments'){
+            getComment($_GET['id']);
+        }
         else{
                 throw new Exception('Page Web inaccessible.');
             }

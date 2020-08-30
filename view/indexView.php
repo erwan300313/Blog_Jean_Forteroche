@@ -9,7 +9,7 @@
     </h3>
     <p>
         <?= nl2br(htmlspecialchars($bio['content'])) ?>
-        ... <a href="index.php?action=various&amp;id=<?=$bio['id']?>" class="readMore">Lire la suite</a>
+        ... <a href="index.php?action=various&amp;id=<?=$bio['id']?>#ancre" class="readMore">Lire la suite</a>
     </p>
 </article>
 
@@ -19,7 +19,8 @@
         Publié le <?=$syn['date_creation']?> Par <?= htmlspecialchars($syn['author'])?>
     </h3>
     <p>
-        <?= htmlspecialchars($syn['content']) ?>... <a href="index.php?action=various&amp;id=<?=$syn['id']?>" class="readMore">Lire la suite</a>
+        <?= htmlspecialchars($syn['content']) ?>
+        ... <a href="index.php?action=various&amp;id=<?=$syn['id']?>#ancre" class="readMore">Lire la suite</a>
     </p>
 </article> 
 <article class="lowerBlock">
@@ -32,7 +33,7 @@
         <h3>publié le <?=htmlspecialchars($data['date_creation'])?> par <?=$data['author']?></h3>
         <p>
             <?=htmlspecialchars($data['content'])?>
-            ... <a href="index.php?action=post&amp;id=<?=$data['id']?>" class="readMore">Lire la suite</a>
+            ... <a href="index.php?action=post&amp;id=<?=$data['id']?>#ancre" class="readMore">Lire la suite</a>
         </p>
     </div>
     <?php

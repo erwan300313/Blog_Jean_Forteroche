@@ -4,6 +4,7 @@
 require_once('model/postManager.php');
 require_once('model/userManager.php');
 require_once('model/variousManager.php');
+require_once('model/commentManager.php');
 
 function indexPosts()
 {
@@ -43,4 +44,13 @@ function post($id)
     require('rightBlockController.php');
     $getPost = $postManager->getPost($id);
     require('view/postView.php');
+}
+
+function getComment($id)
+{
+    require('rightBlockController.php');
+    $getExtractPost = $postManager->getExtractpost($id);
+    $commentManager = new CommentManager();
+    $getComments = $commentManager->getComments($id);
+    require('view/commentsView.php');
 }

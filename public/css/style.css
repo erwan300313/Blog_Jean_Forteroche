@@ -9,6 +9,25 @@ body{
     background-color: rgb(51, 51, 51);
 }
 
+header{
+    position: fixed;
+    width: 100%;
+    background-color: white;
+    z-index: 1;
+}
+
+.divider{
+    height: 229px;;
+}
+
+.blockInvisible{
+    font-family: 'Unica One', cursive;
+    height: 229px;
+    width: 100%;
+    position: absolute;
+    top: 396px;
+}
+
 .logo{
     text-align: center;
     margin: 0px;
@@ -157,9 +176,28 @@ footer a, .copyright{
 .leftBlock{
     text-align: justify;
     margin: 0px 40px;
+    border-bottom : 2px solid rgb(109, 170, 177);
 }
-
 .homePage a{
     color: rgb(109, 170, 177);
+}
+
+.linkPrevious{
+float: right;
+margin-right: 60px;
+}
+
+.commentBlock{
+
+    border: 2px solid rgb(109, 170, 177);
+    border-radius:5px;
+    box-shadow: 2px 2px 2Px black;
+    padding:5px;
+    margin-bottom: 10px;
+    width: 60%
+}
+
+.commentBlock h3, .commentBlock p{
+    margin: 0px;
 }
 

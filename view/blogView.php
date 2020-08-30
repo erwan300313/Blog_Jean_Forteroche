@@ -12,7 +12,7 @@ while ($data = $getPosts->fetch())
         <h3>publié le <?=htmlspecialchars($data['date_creation'])?> par <?=$data['author']?></h3>
         <p>
             <?=nl2br(htmlspecialchars($data['content']))?>
-            ... <a href="index.php?action=post&amp;id=<?=$data['id']?>" class="readMore">Lire la suite</a>
+            ... <a href="index.php?action=post&amp;id=<?=$data['id']?>#ancre" class="readMore">Lire la suite</a>
         </p>
         <br/>
     </article>
