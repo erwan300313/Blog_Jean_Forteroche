@@ -1,5 +1,3 @@
 <?php
-$postManager = new PostManager();
-$userManager = new UserManager();
-$lastUser = $userManager->getLastUser();
-$lastPost = $postManager->lastPost();
+$lastPost = $this->postManager->lastPost();
+$lastUser = $this->userManager->getLastUser();
