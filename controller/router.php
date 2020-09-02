@@ -5,6 +5,8 @@ require('controller/indexController.php');
 require('controller/aboutController.php');
 require('controller/postController.php');
 require('controller/commentController.php');
+require('controller/userController.php');
+
 
 class Router{
     
@@ -12,12 +14,14 @@ class Router{
     private $aboutController;
     private $postController;
     private $commentController;
+    private $userController;
 
     public function __construct(){
         $this->indexController = new IndexController();
         $this->aboutController = new AboutController();
         $this->postController = new PostController();
         $this->commentController = new CommentController();
+        $this->userController = new UserController();
     }
 
     public function routerRequest(){
@@ -73,10 +77,20 @@ class Router{
                         throw new Exception('Page Web inaccessible.');
                     }
                 }
-                else{
-                        throw new Exception('Page Web inaccessible.');
-                    }
+                elseif($_GET['action'] == 'log'){
+                    $this->userController->logIn();
                 }
+                elseif($_GET['action'] == 'membreLogin'){
+                    $this->userController->membreArea($_POST['pseudo'], $_POST['password']);
+                }
+                elseif($_GET['action'] == 'membreArea'){
+                    $this->userController->membreArea($_SESSION['pseudo'], $_SESSION['password']);
+                }
+                elseif($_GET['action'] == 'logOut'){
+                    $this->userController->logOut();
+                }
+
+            }
             else {
                 $this->indexController->home(); /*Home page*/
             }

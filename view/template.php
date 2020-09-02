@@ -11,7 +11,19 @@
         
     <body>
         <header>
-            <div class="headband"></div>
+            <div class="headband">
+                <?php
+                if(isset($_SESSION['pseudo']) AND isset($_SESSION['password'])){
+                ?>
+                <p>Bonjour <?=$_SESSION['pseudo']?> / <i class="fas fa-house-user"></i><a href="index.php?action=membreArea#ancre">Espace membre</a> / <i class="fas fa-sign-out-alt"></i><a href="index.php?action=logOut">Déconnexion</a></p>
+                <?php
+                }else{
+                ?>
+                <p><a href="index.php?action=log"><i class="far fa-user"></i> Se connecter</a> / <a href="index.php?action=register"><i class="fas fa-sign-in-alt"></i> S'inscrire</a></p>
+                <?php
+                }
+                ?>
+            </div>
             <p class="logo"><img src="public/img/logo_400.png" alt="logo de Jean"></p>
             <nav>
                 <ul class="menu">

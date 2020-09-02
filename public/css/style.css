@@ -5,8 +5,20 @@ body{
 }
 
 .headband{
-    height: 30px;
+    height: 40px;
+    padding: 0px 12%;
     background-color: rgb(51, 51, 51);
+}
+
+.headband p{
+    margin: 0px;
+    padding-top: 8px;
+    color: white;
+    
+}
+
+.headband p a{
+    color: white;
 }
 
 header{
@@ -200,4 +212,25 @@ margin-right: 60px;
 .commentBlock h3, .commentBlock p{
     margin: 0px;
 }
+
+.logIn form{
+    width: 50%;
+    margin:auto;
+    text-align: center;
+    padding:10px;
+    font-size: 1.5em;
+    border: 2px solid rgb(109, 170, 177);
+    border-radius: 5px;
+}
+
+input[type="submit" i] {
+    height: 30px;
+}
+
+input[type="text"], input[type="password"]{
+    margin: 10px;
+    width: 250px;
+    height: 20px;
+}
+
 
