@@ -9,9 +9,9 @@
         <input type="text" id="pseudo" name="pseudo"/><br />
         <label for="password">Mot de passe :</label><br />
         <input type="password" id="password" name="password"/><br />
-        <div>
-            <input type="submit" value="Connection" class="submit" formAction="index.php?action=membreLogin#ancre"/>            
-        </div>
+        
+            <input type="submit" value="Connexion" id="connectionButton" formAction="index.php?action=membreLogin#ancre"/>            
+       
     </form>
 </article>
    

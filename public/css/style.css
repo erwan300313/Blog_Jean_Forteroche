@@ -190,6 +190,10 @@ footer a, .copyright{
     margin: 0px 40px;
     border-bottom : 2px solid rgb(109, 170, 177);
 }
+
+.leftBlock p{
+    margin-bottom: 0px;
+}
 .homePage a{
     color: rgb(109, 170, 177);
 }
@@ -223,7 +227,7 @@ margin-right: 60px;
     border-radius: 5px;
 }
 
-input[type="submit" i] {
+#connectionButton{
     height: 30px;
 }
 
@@ -233,4 +237,14 @@ input[type="text"], input[type="password"]{
     height: 20px;
 }
 
+.tox{
+    width : 80%;
+    margin: 0 auto 20px;
+}
+
+#addCommentButton{
+    height: 30px;
+    width: 180px;
+    margin: 10px 0 10px 10%;
+}
 

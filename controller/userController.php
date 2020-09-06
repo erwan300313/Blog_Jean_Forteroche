@@ -18,7 +18,7 @@ Class UserController{
         require('view/logInView.php');
     }
 
-    function membreArea($pseudo, $password){
+    function membreArea($pseudo, $password){ /* pas besoin de get user , recuperer toute les infos directement dans userCheck changer nom en getUser*/
         require('rightBlockController.php');
         $userCheck = $this->userManager->userCheck($pseudo, $password);
         if($userCheck == false){

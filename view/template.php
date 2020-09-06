@@ -6,6 +6,7 @@
         <link href="public/css/style.css" rel="stylesheet" /> 
         <link href="https://fonts.googleapis.com/css2?family=Unica+One&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/fc001796a0.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.tiny.cloud/1/qv7aonmkdnd5f4ghrx4sugtxakuuiam2zc5ho2e03n55ttk0/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 
     </head>
         
@@ -42,7 +43,6 @@
         <div class="blockInvisible" id="ancre"></div>
         <section class="section">
             <section class="leftSection"> 
-                
                 <?= $content ?>
             </section>
             <section class="rightSection">

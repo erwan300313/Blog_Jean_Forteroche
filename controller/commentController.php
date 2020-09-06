@@ -22,4 +22,9 @@ Class CommentController{
         $getComments = $this->commentManager->getComments($id);
         require('view/commentsView.php');
     }
+
+    public function addComment($post_id, $author, $comment){
+        $addComment = $this->commentManager->addComment($post_id, $author, $comment);
+        header('Location: index.php?action=comments&id=' . $post_id);
+    }
 }

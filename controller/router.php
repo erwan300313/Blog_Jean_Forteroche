@@ -77,6 +77,17 @@ class Router{
                         throw new Exception('Page Web inaccessible.');
                     }
                 }
+                elseif($_GET['action'] == 'addComment'){
+                    if(isset($_GET['id'])){
+                        if($_GET['id'] > 0 AND $_GET['id'] < 15){
+                            $this->commentController->addComment($_GET['id'], $_POST['author'], strip_tags($_POST['comment']));
+                        }else{
+                            throw new Exception('Envoie du commentaire impossible.');
+                        }
+                    }else{
+                        throw new Exception('Envoye du commentaire impossible.');
+                    }
+                }
                 elseif($_GET['action'] == 'log'){
                     $this->userController->logIn();
                 }
@@ -89,7 +100,7 @@ class Router{
                 elseif($_GET['action'] == 'logOut'){
                     $this->userController->logOut();
                 }
-
+                
             }
             else {
                 $this->indexController->home(); /*Home page*/
