@@ -88,6 +88,17 @@ class Router{
                         throw new Exception('Envoye du commentaire impossible.');
                     }
                 }
+                elseif($_GET['action'] == 'reportComment'){
+                    if(isset($_GET['comment_id']) AND isset($_POST['reportReason'])){
+                        if(empty($_POST['report_author'])){
+                            $this->commentController->reportComment($_GET['comment_id'], $_POST['reportReason'], 'anonyme');
+                        }else{
+                            $this->commentController->reportComment($_GET['comment_id'], $_POST['reportReason'], $_POST['report_author']);
+                        }
+                    }else{
+                        throw new Exception('Erreur lors de votre signalement.');
+                    }
+                }
                 elseif($_GET['action'] == 'log'){
                     $this->userController->logIn();
                 }

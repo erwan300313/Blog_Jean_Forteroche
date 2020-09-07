@@ -13,6 +13,8 @@ Class CommentController{
         $this->userManager = new UserManager();
         $this->variousManager = new VariousManager();
         $this->commentManager = new CommentManager();
+        $this->reportManager = new ReportManager();
+
     }
 
     public function getComment($id){
@@ -26,5 +28,10 @@ Class CommentController{
     public function addComment($post_id, $author, $comment){
         $addComment = $this->commentManager->addComment($post_id, $author, $comment);
         header('Location: index.php?action=comments&id=' . $post_id);
+    }
+
+    public function reportComment($comment_id, $reportReason, $report_author){
+        $reportComment = $this->reportManager->reportComment($comment_id, $reportReason, $report_author);
+        header('Location: index.php?action=comments&id=' . $_GET['post_id']);
     }
 }
