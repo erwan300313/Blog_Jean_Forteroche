@@ -108,6 +108,13 @@ class Router{
                         }
                     }
                 }
+                elseif($_GET['action'] == 'deleteComment'){
+                    if(isset($_GET['commentId'])){
+                        $this->commentController->deleteComment($_GET['commentId']);
+                    }else{
+                        throw new Exception('Un problème est survenue pendant la suppression, veuillez recommencer.');
+                    }
+                }
                 elseif($_GET['action'] == 'log'){
                     $this->userController->logIn();
                 }

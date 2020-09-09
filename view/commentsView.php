@@ -123,10 +123,29 @@ while ($data = $getComments->fetch())
                     <?php
                     } 
                 }
-            }     
+            }
+            elseif($_GET['event'] == 'deleteComment'){ 
+                if($_GET['commentId'] == $data['id']){
+                    if(isset($_SESSION['pseudo'])){
+                        if($_SESSION['pseudo'] == $data['author']){
+                        ?>
+                            <button onclick="window.location.href='index.php?action=deleteComment&amp;id=<?=$getExtractPost['id']?>&amp;commentId=<?=$data['id']?>#commentAncre';">Valide la suppression du commentaire</button>
+                        <?php    
+                        }else{
+                        ?>
+                            <h3>Vous devez etre l'auteur ou administareur pour supprimer <button onclick="window.location.href='index.php?action=comments&amp;id=<?=$getExtractPost['id']?>#ancre';">OK</button></h3>
+                        <?php   
+                        }
+                    }else{
+                    ?>
+                        <h3>Vous devez etre l'auteur ou administareur pour supprimer <button onclick="window.location.href='index.php?action=comments&amp;id=<?=$getExtractPost['id']?>#ancre';">OK</button></h3>
+                    <?php    
+                    }
+                }
+            }   
         }else{
         ?>
-        <p><button onclick="window.location.href='index.php?action=comments&amp;event=reportComment&amp;id=<?=$getExtractPost['id']?>&amp;commentId=<?=$data['id']?>&amp;reportComment=true#commentAncre';">Signaler</button> <button onclick="window.location.href='index.php?action=comments&amp;event=editComment&amp;id=<?=$getExtractPost['id']?>&amp;commentId=<?=$data['id']?>&amp;editComment=true#commentAncre';">Modifier</button></p>
+        <p><button onclick="window.location.href='index.php?action=comments&amp;event=reportComment&amp;id=<?=$getExtractPost['id']?>&amp;commentId=<?=$data['id']?>&amp;reportComment=true#commentAncre';">Signaler</button> <button onclick="window.location.href='index.php?action=comments&amp;event=editComment&amp;id=<?=$getExtractPost['id']?>&amp;commentId=<?=$data['id']?>&amp;editComment=true#commentAncre';">Modifier</button> <button onclick="window.location.href='index.php?action=comments&amp;event=deleteComment&amp;id=<?=$getExtractPost['id']?>&amp;commentId=<?=$data['id']?>&amp;editComment=true#commentAncre';">Supprimer</button></p>
         <?php
         }
         ?>
