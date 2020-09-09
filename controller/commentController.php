@@ -34,4 +34,10 @@ Class CommentController{
         $reportComment = $this->reportManager->reportComment($comment_id, $reportReason, $report_author);
         header('Location: index.php?action=comments&id=' . $_GET['post_id']);
     }
+
+    public function editComment($comment_id, $comment){
+         $this->commentManager->editComment($comment_id, $comment);
+        header('Location: index.php?action=comments&id=' . $_GET['post_id']);
+    }
+
 }

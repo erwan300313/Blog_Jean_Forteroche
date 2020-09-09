@@ -99,6 +99,15 @@ class Router{
                         throw new Exception('Erreur lors de votre signalement.');
                     }
                 }
+                elseif($_GET['action'] == 'editComment'){
+                    if(isset($_GET['comment_id'])){
+                        if(empty($_POST['comment'])){
+                            throw new Exception('Vous devez saisir un commentraire.');
+                        }else{
+                            $this->commentController->editComment($_GET['comment_id'], strip_tags($_POST['comment']));
+                        }
+                    }
+                }
                 elseif($_GET['action'] == 'log'){
                     $this->userController->logIn();
                 }

@@ -95,7 +95,7 @@ while ($data = $getComments->fetch())
                     if(isset($_SESSION['pseudo'])){
                         if($_SESSION['pseudo'] == $data['author']){
                         ?>
-                            <form action="index.php?action=editComment&amp;id=<?=$getExtractPost['id']?>#ancre" method="post">
+                            <form action="index.php?action=editComment&amp;post_id=<?=$getExtractPost['id']?>&amp;comment_id=<?=$data['id']?>#ancre" method="post">
                                 <textarea class="addComment" name="comment"><?=$data['content']?></textarea>
                                 <script>
                                     tinymce.init({
