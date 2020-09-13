@@ -1,6 +1,4 @@
-<?php $title = "A propos"; ?>
-
-<?php ob_start(); ?>
+<?php $this->title = "A propos"; ?>
 
 <p class="homePage" id="ancre"><a href="index.php">Retour à la page d'accueil</a></p>
 
@@ -22,7 +20,3 @@ while ($data = $getFullVarious->fetch())
 ?>
 
 <p class="homePage"><a href="index.php">Retour à la page d'accueil</a></p>
-
-<?php $content = ob_get_clean(); ?>
-
-<?php require('template.php'); ?>

@@ -15,16 +15,9 @@ class UserManager extends Manager
 
     public function userCheck($pseudo, $password){
         $db = $this->dbConnect();
-        $req = $db->prepare('SELECT id, pseudo, password FROM users WHERE pseudo = ? AND password= ? ');
+        $req = $db->prepare('SELECT id,id_status,firstName, lastName, pseudo, password, mail, DATE_FORMAT(date_inscription, \'%d/%m/%Y\') AS date_inscription FROM users WHERE pseudo = ? AND password= ? ');
         $req->execute(array($pseudo, $password));
         $userCheck = $req->fetch();
         return $userCheck;
-    }
-
-    public function getUser($id){
-        $db = $this->dbConnect();
-        $req = $db->query('SELECT id,id_status,firstName, lastName, pseudo, password, mail, DATE_FORMAT(date_inscription, \'%d/%m/%Y\') AS date_inscription FROM users');
-        $getUser = $req->fetch();
-        return $getUser;
     }
 }

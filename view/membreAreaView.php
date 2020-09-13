@@ -1,6 +1,4 @@
-<?php $title = 'Billet simple pour l\'Alaska'; ?>
-
-<?php ob_start(); ?>
+<?php $this->title = 'Espace membre'; ?>
 
 <article class="logIn">
     <h2>Espace membre</h2>
@@ -14,7 +12,3 @@
         <li>date d'inscription: <?=$getUser['date_inscription']?></li>
     </ul>
 </article>
-   
-<?php $content = ob_get_clean(); ?>
-
-<?php require('template.php'); ?>

@@ -1,6 +1,4 @@
-<?php $title = 'Billet simple pour l\'Alaska'; ?>
-
-<?php ob_start(); ?>
+<?php $this->title = 'Page de Connexion'; ?>
 
 <article class="logIn">
     <h2>Espace connexion</h2>
@@ -14,7 +12,3 @@
        
     </form>
 </article>
-   
-<?php $content = ob_get_clean(); ?>
-
-<?php require('template.php'); ?>

@@ -3,23 +3,18 @@ require_once('controller.php');
 
 Class UserController{
 
-    private $postManager;
     private $userManager;
-    private $variousManager;
 
     public function __construct(){
-        $this->postManager = new PostManager();
         $this->userManager = new UserManager();
-        $this->variousManager = new VariousManager();
     }
 
     function logIn(){
-        require('rightBlockController.php');
-        require('view/logInView.php');
+        $view = new ViewManager('login');
+        $view->generate(array());
     }
 
-    function membreArea($pseudo, $password){ /* pas besoin de get user , recuperer toute les infos directement dans userCheck changer nom en getUser*/
-        require('rightBlockController.php');
+    function membreArea($pseudo, $password){
         $userCheck = $this->userManager->userCheck($pseudo, $password);
         if($userCheck == false){
             throw new Exception('Il yas un probleme dans votre pseudo ou votre mot de pass.');
@@ -27,8 +22,9 @@ Class UserController{
             $_SESSION['id'] = $password;
             $_SESSION['pseudo'] = $pseudo;
             $_SESSION['password'] = $password;
-            $getUser = $this->userManager->getUser($userCheck['id']);
-            require('view/membreAreaView.php');
+            $getUser = $userCheck;
+            $view = new ViewManager('membreArea');
+            $view->generate(array('getUser' => $getUser));
         }
     }
 

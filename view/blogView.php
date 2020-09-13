@@ -1,6 +1,5 @@
-<?php $title = "Bienvenue sur le Blog"; ?>
+<?php $this->title = "Bienvenue sur le Blog"; ?>
 
-<?php ob_start(); ?>
 <p class="homePage"><a href="index.php">Retour à la page d'accueil</a></p>
 
 <?php
@@ -21,7 +20,3 @@ while ($data = $getPosts->fetch())
 ?>
 
 <p class="homePage"><a href="index.php">Retour à la page d'accueil</a></p>
-
-<?php $content = ob_get_clean(); ?>
-
-<?php require('template.php'); ?>

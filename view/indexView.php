@@ -1,6 +1,4 @@
-<?php $title = 'Billet simple pour l\'Alaska'; ?>
-
-<?php ob_start(); ?>
+<?php $this->title = 'Billet simple pour l\'Alaska'; ?>
 
 <article class="biography">
     <h2>Biographie</h2>
@@ -40,7 +38,3 @@
     }
     ?>
 </article>
-   
-<?php $content = ob_get_clean(); ?>
-
-<?php require('template.php'); ?>

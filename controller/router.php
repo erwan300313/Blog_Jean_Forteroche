@@ -130,16 +130,13 @@ class Router{
                 
             }
             else {
-                $this->indexController->home(); /*Home page*/
+                $this->indexController->home(); //Home page
             }
         }
         catch(Exception $e) { // If error ...
-            $postManager = new PostManager();
-            $lastPost = $postManager->lastPost();
-            $userManager = new UserManager();
-            $lastUser = $userManager->getLastUser();
             $errorMessage = $e->getMessage();
-            require('view/errorView.php');
+            $view = new ViewManager('error');
+            $view->generate(array('errorMessage' => $errorMessage));
         }
     }
 }

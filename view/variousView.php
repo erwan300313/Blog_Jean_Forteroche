@@ -1,6 +1,4 @@
-<?php $title = htmlspecialchars($getVarious['title']); ?>
-
-<?php ob_start(); ?>
+<?php $this->title = htmlspecialchars($getVarious['title']); ?>
 
 <p class="homePage">
     <a href="index.php">Retour à la page d'accueil</a>
@@ -18,7 +16,3 @@
     <a href="index.php">Retour à la page d'accueil</a>
     <a href="index.php?action=about#ancre" class="linkPrevious">Retour à la page précédente</a>
 </p>
-
-<?php $content = ob_get_clean(); ?>
-
-<?php require('template.php'); ?>

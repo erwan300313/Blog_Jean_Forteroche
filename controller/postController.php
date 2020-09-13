@@ -4,27 +4,24 @@ require_once('controller.php');
 Class PostController{
 
     private $postManager;
-    private $userManager;
-    private $variousManager;
 
     public function __construct(){
         $this->postManager = new PostManager();
-        $this->userManager = new UserManager();
-        $this->variousManager = new VariousManager();
+
     }
 
     public function posts()
     {
-        require('rightBlockController.php');
         $getPosts = $this->postManager->getPosts();
-        require('view/blogView.php');
+        $view = new ViewManager('blog');
+        $view->generate(array('getPosts' => $getPosts));
     }
 
     public function post($id)
     {
-        require('rightBlockController.php');
         $getPost = $this->postManager->getPost($id);
-        require('view/postView.php');
+        $view = new ViewManager('post');
+        $view->generate(array('getPost' => $getPost));
     }
 
 }

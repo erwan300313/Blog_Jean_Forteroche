@@ -4,25 +4,20 @@ require_once('controller.php');
 Class CommentController{
 
     private $postManager;
-    private $userManager;
-    private $variousManager;
     private $commentManager;
+    private $reportManager;
 
     public function __construct(){
         $this->postManager = new PostManager();
-        $this->userManager = new UserManager();
-        $this->variousManager = new VariousManager();
         $this->commentManager = new CommentManager();
         $this->reportManager = new ReportManager();
-
     }
 
     public function getComment($id){
-
-        require('rightBlockController.php');
         $getExtractPost = $this->postManager->getExtractpost($id);
         $getComments = $this->commentManager->getComments($id);
-        require('view/commentsView.php');
+        $view = new ViewManager('comments');
+        $view->generate(array('getExtractPost' => $getExtractPost, 'getComments' => $getComments));
     }
 
     public function addComment($post_id, $author, $comment){
