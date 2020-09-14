@@ -13,6 +13,15 @@ class CommentManager extends Manager
         return $req;
     }
 
+    public function getComment($comment_id)
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare('SELECT id, post_id, author, content, DATE_FORMAT(date_creation, \'%d/%m/%Y\') AS date_creation FROM comments WHERE id = ?');
+        $req->execute(array($comment_id));
+        $data = $req->fetch();
+        return $data;
+    }
+
     public function addComment($post_id, $author, $comment)
     {
         $db = $this->dbConnect();

@@ -23,7 +23,7 @@ class Router{
         $this->commentController = new CommentController();
         $this->userController = new UserController();
     }
-
+    
     public function routerRequest(){
         try { 
             if (isset($_GET['action'])){
@@ -68,7 +68,7 @@ class Router{
                     if(isset($_GET['id'])){
                         if($_GET['id'] > 0 AND $_GET['id'] < 15){
                             
-                            $this->commentController->getComment($_GET['id']);
+                            $this->commentController->getComments($_GET['id']);
                         }
                         else{
                             throw new Exception('Page Web inaccessible.');
@@ -77,35 +77,9 @@ class Router{
                         throw new Exception('Page Web inaccessible.');
                     }
                 }
-                elseif($_GET['action'] == 'addComment'){
-                    if(isset($_GET['id'])){
-                        if($_GET['id'] > 0 AND $_GET['id'] < 15){
-                            $this->commentController->addComment($_GET['id'], $_POST['author'], strip_tags($_POST['comment']));
-                        }else{
-                            throw new Exception('Envoie du commentaire impossible.');
-                        }
-                    }else{
-                        throw new Exception('Envoye du commentaire impossible.');
-                    }
-                }
-                elseif($_GET['action'] == 'reportComment'){
-                    if(isset($_GET['comment_id']) AND isset($_POST['reportReason'])){
-                        if(empty($_POST['report_author'])){
-                            $this->commentController->reportComment($_GET['comment_id'], $_POST['reportReason'], 'anonyme');
-                        }else{
-                            $this->commentController->reportComment($_GET['comment_id'], $_POST['reportReason'], $_POST['report_author']);
-                        }
-                    }else{
-                        throw new Exception('Erreur lors de votre signalement.');
-                    }
-                }
-                elseif($_GET['action'] == 'editComment'){
+                elseif($_GET['action'] == 'getComment'){
                     if(isset($_GET['comment_id'])){
-                        if(empty($_POST['comment'])){
-                            throw new Exception('Vous devez saisir un commentraire.');
-                        }else{
-                            $this->commentController->editComment($_GET['comment_id'], strip_tags($_POST['comment']));
-                        }
+                        $this->commentController->getComment($_GET['comment_id']);
                     }
                 }
                 elseif($_GET['action'] == 'deleteComment'){

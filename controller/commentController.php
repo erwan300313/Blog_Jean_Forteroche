@@ -13,31 +13,24 @@ Class CommentController{
         $this->reportManager = new ReportManager();
     }
 
-    public function getComment($id){
+    public function getComments($id){
         $getExtractPost = $this->postManager->getExtractpost($id);
         $getComments = $this->commentManager->getComments($id);
         $view = new ViewManager('comments');
         $view->generate(array('getExtractPost' => $getExtractPost, 'getComments' => $getComments));
     }
 
-    public function addComment($post_id, $author, $comment){
-        $this->commentManager->addComment($post_id, $author, $comment);
-        header('Location: index.php?action=comments&id=' . $post_id);
+    public function getComment($comment_id){
+        if($_SESSION['pseudo'] == $_GET['author']){
+            $getExtractPost = $this->postManager->getExtractpost($_GET['post_id']);
+            $getComment = $this->commentManager->getComment($comment_id);
+            $view = new ViewManager('editComment');
+            $view->generate(array('getExtractPost' => $getExtractPost, 'getComment' => $getComment));
+        }else{
+            throw new Exception('Vous devez être l\'auteur du commentaire pour le modifier.');
+        }
+        
     }
 
-    public function reportComment($comment_id, $reportReason, $report_author){
-        $this->reportManager->reportComment($comment_id, $reportReason, $report_author);
-        header('Location: index.php?action=comments&id=' . $_GET['post_id']);
-    }
-
-    public function editComment($comment_id, $comment){
-        $this->commentManager->editComment($comment_id, $comment);
-        header('Location: index.php?action=comments&id=' . $_GET['post_id']);
-    }
-
-    public function deleteComment($commentId){
-        $this->commentManager->deleteComment($commentId);
-        header('Location: index.php?action=comments&id=' . $_GET['id']);
-   }
 
 }
