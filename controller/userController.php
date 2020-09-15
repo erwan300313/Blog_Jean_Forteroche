@@ -19,9 +19,9 @@ Class UserController{
         if($userCheck == false){
             throw new Exception('Il yas un probleme dans votre pseudo ou votre mot de pass.');
         }else{
-            $_SESSION['id'] = $password;
-            $_SESSION['pseudo'] = $pseudo;
-            $_SESSION['password'] = $password;
+            $_SESSION['id'] = $userCheck['id'];
+            $_SESSION['pseudo'] = $userCheck['pseudo'];
+            $_SESSION['id_status'] = $userCheck['id_status'];
             $getUser = $userCheck;
             $view = new ViewManager('membreArea');
             $view->generate(array('getUser' => $getUser));

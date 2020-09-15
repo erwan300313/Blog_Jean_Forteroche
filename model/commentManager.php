@@ -22,29 +22,25 @@ class CommentManager extends Manager
         return $data;
     }
 
-    public function addComment($post_id, $author, $comment)
+    public function addComment($post_id, $newComment, $author)
     {
         $db = $this->dbConnect();
         $comments = $db->prepare('INSERT INTO comments(post_id, author, content, date_creation) VALUES(?, ?, ?, NOW())');
-        $affectedLines = $comments->execute(array($post_id, $author, $comment));
-
-        return $affectedLines;
+        $affectedLines = $comments->execute(array($post_id, $author, $newComment));
     }
 
-    public function editComment($comment_id, $comment)
+    public function editComment($comment_id, $editComment)
     {
         $db=$this->dbConnect();
         $req= $db->prepare('UPDATE comments SET content = ?, date_creation = NOW() WHERE id = ?');
-        $affectedLines = $req->execute(array($comment, $comment_id));
-        return $affectefLines;
+        $affectedLines = $req->execute(array($editComment, $comment_id));
     }
 
-    public function deleteComment($commentId)
+    public function deleteComment($comment_id)
     {
         $db=$this->dbConnect();
         $req= $db->prepare('DELETE FROM comments WHERE id = ?');
-        $affectedLines = $req->execute(array($commentId));
-        return $affectefLines;
+        $affectedLines = $req->execute(array($comment_id));
     }
 
     

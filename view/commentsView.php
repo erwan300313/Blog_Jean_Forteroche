@@ -16,6 +16,9 @@
     </p>
     <br/>
 </article>
+
+<h3 class="newCom"><a href="index.php?action=addCommentView&amp;post_id=<?=$getExtractPost['id']?>#ancre">Ajouter un commentaire</a></h3>
+
 <h2><strong>Espace commentaire</strong></h2>
 
 <?php
@@ -33,7 +36,7 @@ while ($data = $getComments->fetch())
         <div class="commentButton">
             <a href="index.php?action=getComment&amp;comment_id=<?=$data['id']?>&amp;post_id=<?=$data['post_id']?>&amp;author=<?=$data['author']?>#ancre">Modifier</a> 
             <a href="">Signaler</a> 
-            <a href="">Supprimer</a>
+            <a href="index.php?action=deleteCommentView&amp;comment_id=<?=$data['id']?>&amp;author=<?=$data['author']?>&amp;post_id=<?=$data['post_id']?>#ancre">Supprimer</a>
         </div>
         <?php
         }

@@ -14,7 +14,7 @@
         <header>
             <div class="headband">
                 <?php
-                if(isset($_SESSION['pseudo']) AND isset($_SESSION['password'])){
+                if(isset($_SESSION['pseudo'])){
                 ?>
                 <p>Bonjour <?=$_SESSION['pseudo']?> / <i class="fas fa-house-user"></i><a href="index.php?action=membreArea#ancre">Espace membre</a> / <i class="fas fa-sign-out-alt"></i><a href="index.php?action=logOut">Déconnexion</a></p>
                 <?php

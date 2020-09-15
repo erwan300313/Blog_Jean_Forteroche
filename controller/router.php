@@ -79,15 +79,32 @@ class Router{
                 }
                 elseif($_GET['action'] == 'getComment'){
                     if(isset($_GET['comment_id'])){
-                        $this->commentController->getComment($_GET['comment_id']);
+                        $this->commentController->getEditComment($_GET['comment_id']);
                     }
                 }
-                elseif($_GET['action'] == 'deleteComment'){
-                    if(isset($_GET['commentId'])){
-                        $this->commentController->deleteComment($_GET['commentId']);
+                elseif($_GET['action'] == 'editComment'){
+                    if(isset($_POST['editComment'])){
+                        $this->commentController->editComment($_GET['comment_id'], $_POST['editComment']);
+                        $this->commentController->getComments($_GET['post_id']);
                     }else{
-                        throw new Exception('Un problème est survenue pendant la suppression, veuillez recommencer.');
+                        throw new Exception('Vous devez saisir un commentaire.');
+                    } 
+                }
+                elseif($_GET['action'] == 'addCommentView'){
+                    $this->commentController->addCommentView($_GET['post_id']);
+                }
+                elseif($_GET['action'] == 'addComment'){
+                    if(isset($_POST['newComment'])){
+                        $this->commentController->addComment($_GET['post_id'], $_POST['newComment'], $_POST['pseudo']);
+                    }else{
+                        throw new Exception('Vous devez saisir un commentaire.');
                     }
+                }
+                elseif($_GET['action'] == 'deleteCommentView'){
+                    $this->commentController->deleteCommentView($_GET['comment_id'], $_GET['post_id']);
+                }
+                elseif($_GET['action'] == 'deleteComment'){
+                    $this->commentController->deleteComment($_GET['comment_id']);
                 }
                 elseif($_GET['action'] == 'log'){
                     $this->userController->logIn();

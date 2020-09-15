@@ -260,3 +260,7 @@ input[type="text"], input[type="password"]{
     background-color: rgb(206, 206, 206);
 }
 
+.editCommentButton{
+    margin-top: 5px;
+}
+
