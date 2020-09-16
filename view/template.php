@@ -20,7 +20,7 @@
                 <?php
                 }else{
                 ?>
-                <p><a href="index.php?action=log"><i class="far fa-user"></i> Se connecter</a> / <a href="index.php?action=register"><i class="fas fa-sign-in-alt"></i> S'inscrire</a></p>
+                <p><a href="index.php?action=log"><i class="far fa-user"></i> Se connecter</a> / <a href="index.php?action=registerView#ancre"><i class="fas fa-sign-in-alt"></i> S'inscrire</a></p>
                 <?php
                 }
                 ?>

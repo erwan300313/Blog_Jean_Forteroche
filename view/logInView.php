@@ -8,7 +8,6 @@
         <label for="password">Mot de passe :</label><br />
         <input type="password" id="password" name="password"/><br />
         
-            <input type="submit" value="Connexion" id="connectionButton" formAction="index.php?action=membreLogin#ancre"/>            
-       
+        <input type="submit" value="Connexion" id="connectionButton" formAction="index.php?action=membreLogin#ancre"/>            
     </form>
 </article>

@@ -9,13 +9,8 @@ Class UserController{
         $this->userManager = new UserManager();
     }
 
-    function logIn(){
-        $view = new ViewManager('login');
-        $view->generate(array());
-    }
-
-    function membreArea($pseudo, $password){
-        $userCheck = $this->userManager->userCheck($pseudo, $password);
+    function membreArea($pseudo){
+        $userCheck = $this->userManager->userCheck($pseudo);
         if($userCheck == false){
             throw new Exception('Il yas un probleme dans votre pseudo ou votre mot de pass.');
         }else{
@@ -33,5 +28,17 @@ Class UserController{
         session_destroy();
         header('Location: index.php');
     }
+
+    function addUser($lastName, $firstName, $pseudo, $password, $mail){
+        $userCheck = $this->userManager->userCheck($pseudo);
+        if($userCheck == false){
+            $pass_hache = password_hash($_POST['password'], PASSWORD_DEFAULT);
+            $this->userManager->addUser($lastName, $firstName, $pseudo, $pass_hache, $mail, $_GET['id_status']);
+            $this->membreArea($pseudo);
+        }else{
+            throw new Exception('Votre pseudo est déja utilisé par un autre utilisateur, veuillez entré un nouveau pseudo');
+        }
+    }
+    
 
 }

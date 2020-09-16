@@ -5,12 +5,10 @@ Class CommentController{
 
     private $postManager;
     private $commentManager;
-    private $reportManager;
 
     public function __construct(){
         $this->postManager = new PostManager();
         $this->commentManager = new CommentManager();
-        $this->reportManager = new ReportManager();
     }
 
     public function getComments($id){
@@ -62,6 +60,12 @@ Class CommentController{
 
     public function deleteComment($comment_id){
         $this->commentManager->deleteComment($comment_id);
+        header('Location: index.php?action=comments&id=' . $_GET['post_id']);
+    }
+
+    public function reportComment($comment_id, $report){
+        $report = $report + 1;
+        $this->commentManager->reportComment($comment_id, $report);
         header('Location: index.php?action=comments&id=' . $_GET['post_id']);
     }
 

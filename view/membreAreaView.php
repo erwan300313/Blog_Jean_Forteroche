@@ -4,7 +4,18 @@
     <h2>Espace membre</h2>
     <h3>Information personnelle</h3>
     <ul>
-        <li>status : Administrateur</li>
+<li>status : <?php 
+            if($_SESSION['id_status'] == 1){
+            ?>
+            Administrateur
+            <?php
+            }else{
+            ?>
+            Utilisateur
+            <?php
+            }
+            ?>
+            </li>
         <li>Prénom : <?=$getUser['firstName']?></li>
         <li>Nom : <?=$getUser['lastName']?></li>
         <li>pseudo : <?=$getUser['pseudo']?></li>

@@ -8,7 +8,7 @@ class CommentManager extends Manager
     public function getComments($post_id)
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('SELECT id, post_id, author, content, DATE_FORMAT(date_creation, \'%d/%m/%Y\') AS date_creation FROM comments WHERE post_id = ? ORDER BY id DESC');
+        $req = $db->prepare('SELECT id, post_id, author, content, DATE_FORMAT(date_creation, \'%d/%m/%Y\') AS date_creation, report FROM comments WHERE post_id = ? ORDER BY id DESC');
         $req->execute(array($post_id));
         return $req;
     }
@@ -42,6 +42,15 @@ class CommentManager extends Manager
         $req= $db->prepare('DELETE FROM comments WHERE id = ?');
         $affectedLines = $req->execute(array($comment_id));
     }
+
+    public function reportComment($comment_id, $report)
+    {
+        $db=$this->dbConnect();
+        $req= $db->prepare('UPDATE comments SET report = ? WHERE id = ?');
+        $affectedLines = $req->execute(array($report, $comment_id));
+    }
+
+
 
     
 }

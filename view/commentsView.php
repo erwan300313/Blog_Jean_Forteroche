@@ -35,7 +35,7 @@ while ($data = $getComments->fetch())
         ?>
         <div class="commentButton">
             <a href="index.php?action=getComment&amp;comment_id=<?=$data['id']?>&amp;post_id=<?=$data['post_id']?>&amp;author=<?=$data['author']?>#ancre">Modifier</a> 
-            <a href="">Signaler</a> 
+            <a href="index.php?action=reportComment&amp;comment_id=<?=$data['id']?>&amp;report=<?=$data['report']?>&amp;post_id=<?=$data['post_id']?>#ancre">Signaler</a> 
             <a href="index.php?action=deleteCommentView&amp;comment_id=<?=$data['id']?>&amp;author=<?=$data['author']?>&amp;post_id=<?=$data['post_id']?>#ancre">Supprimer</a>
         </div>
         <?php

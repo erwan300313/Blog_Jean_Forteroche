@@ -106,14 +106,27 @@ class Router{
                 elseif($_GET['action'] == 'deleteComment'){
                     $this->commentController->deleteComment($_GET['comment_id']);
                 }
+                elseif($_GET['action'] == 'reportComment'){
+                    $this->commentController->reportComment($_GET['comment_id'], $_GET['report']);
+                }
                 elseif($_GET['action'] == 'log'){
-                    $this->userController->logIn();
+                    $view = new ViewManager('login');
+                    $view->generate(array());
                 }
                 elseif($_GET['action'] == 'membreLogin'){
-                    $this->userController->membreArea($_POST['pseudo'], $_POST['password']);
+                    $this->userController->membreArea($_POST['pseudo']);
                 }
-                elseif($_GET['action'] == 'membreArea'){
-                    $this->userController->membreArea($_SESSION['pseudo'], $_SESSION['password']);
+                elseif($_GET['action'] == 'registerView'){
+                    $view = new ViewManager('register');
+                    $view->generate(array());
+                }
+                elseif($_GET['action'] == 'register'){
+                    if(empty($_POST['lastName']) OR empty($_POST['firstName']) OR empty($_POST['pseudo']) OR empty($_POST['password']) OR empty($_POST['mail'])){
+                        throw new Exception('Vous devez remplir tout les champs du formulaire d\'inscription.');
+                    }else{
+                        $this->userController->addUser($_POST['lastName'], $_POST['firstName'], $_POST['pseudo'], $_POST['password'], $_POST['mail'] );
+                    }
+                    
                 }
                 elseif($_GET['action'] == 'logOut'){
                     $this->userController->logOut();
