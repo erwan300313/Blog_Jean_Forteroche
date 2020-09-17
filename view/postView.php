@@ -9,7 +9,7 @@
     <h2><?=htmlspecialchars($getPost['title'])?></h2>
     <h3>publié le <?=htmlspecialchars($getPost['date_creation'])?> par <?=$getPost['author']?></h3>
     <p>
-        <?=nl2br(htmlspecialchars($getPost['content']))?>
+        <?= nl2br(html_entity_decode($getPost['content']))?>
     </p>
     <br/>
 </article>

@@ -16,7 +16,7 @@
                 <?php
                 if(isset($_SESSION['pseudo'])){
                 ?>
-                <p>Bonjour <?=$_SESSION['pseudo']?> / <i class="fas fa-house-user"></i><a href="index.php?action=membreArea#ancre">Espace membre</a> / <i class="fas fa-sign-out-alt"></i><a href="index.php?action=logOut">Déconnexion</a></p>
+                <p>Bonjour <?=$_SESSION['pseudo']?> / <i class="fas fa-house-user"></i><a href="index.php?action=membreAreaLogin#ancre">Espace membre</a> / <i class="fas fa-sign-out-alt"></i><a href="index.php?action=logOut">Déconnexion</a></p>
                 <?php
                 }else{
                 ?>
@@ -56,7 +56,7 @@
                     <h4><?=htmlspecialchars($lastPost['title'])?></h4>
                     <p>publié par <?=htmlspecialchars($lastPost['author'])?><br /> le <?=htmlspecialchars($lastPost['date_creation'])?></p>
                     <p>
-                        <?=htmlspecialchars($lastPost['content'])?>
+                        <?=html_entity_decode($lastPost['content'])?>
                         ... <a href="index.php?action=post&amp;id=<?=$lastPost['id']?>#ancre" class="readMore">Lire la suite</a>
                     </p>
                 </article> 

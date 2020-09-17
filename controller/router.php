@@ -48,31 +48,26 @@ class Router{
                     $this->aboutController->about();
                 }
                 elseif($_GET['action'] == 'blog'){
-                    
-                    $this->postController->posts();
+                    $this->postController->getPosts();
                 }
                 elseif($_GET['action'] == 'post'){
                     if(isset($_GET['id'])){
-                        if($_GET['id'] > 0 AND $_GET['id'] < 15){
-                            
-                            $this->postController->post($_GET['id']);
-                        }
-                        else{
-                            throw new Exception('Page Web inaccessible.');
-                        }
+                            $this->postController->getPost($_GET['id']);
                     }else{
                         throw new Exception('Page Web inaccessible.');
                     }
                 }
+                elseif($_GET['action'] == 'addPost'){
+                    if(empty($_POST['content']) OR empty($_POST['title'])){
+                        throw new Exception('Vous devez saisir un titre et un post');
+                    }else{
+                        $content = htmlentities($_POST['content'], ENT_QUOTES);
+                        $this->postController->addPost($_GET['author'], $_POST['title'], $content);
+                    }
+                }
                 elseif($_GET['action'] == 'comments'){
                     if(isset($_GET['id'])){
-                        if($_GET['id'] > 0 AND $_GET['id'] < 15){
-                            
-                            $this->commentController->getComments($_GET['id']);
-                        }
-                        else{
-                            throw new Exception('Page Web inaccessible.');
-                        }
+                        $this->commentController->getComments($_GET['id']);
                     }else{
                         throw new Exception('Page Web inaccessible.');
                     }
@@ -114,7 +109,14 @@ class Router{
                     $view->generate(array());
                 }
                 elseif($_GET['action'] == 'membreLogin'){
-                    $this->userController->membreArea($_POST['pseudo']);
+                    if(empty($_POST['pseudo']) OR empty($_POST['password'])){
+                        throw new Exception('L\'un des champs du formulaire de connexion est vide.');
+                    }else{
+                        $this->userController->membreArea($_POST['pseudo'], $_POST['password']);
+                    }
+                }
+                elseif($_GET['action'] == 'membreAreaLogin'){
+                    $this->userController->membreAreaLogin($_SESSION['pseudo']);
                 }
                 elseif($_GET['action'] == 'registerView'){
                     $view = new ViewManager('register');
@@ -126,7 +128,6 @@ class Router{
                     }else{
                         $this->userController->addUser($_POST['lastName'], $_POST['firstName'], $_POST['pseudo'], $_POST['password'], $_POST['mail'] );
                     }
-                    
                 }
                 elseif($_GET['action'] == 'logOut'){
                     $this->userController->logOut();

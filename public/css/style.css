@@ -238,8 +238,8 @@ input[type="text"], input[type="password"]{
 }
 
 .tox{
-    width : 80%;
-    margin: 0 auto 20px;
+    width: 90%;
+    margin: auto;
 }
 
 #addCommentButton{
