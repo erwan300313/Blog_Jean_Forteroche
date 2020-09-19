@@ -264,3 +264,37 @@ input[type="text"], input[type="password"]{
     margin-top: 5px;
 }
 
+#reportBlock{
+    margin: 20px 0px;
+    border-top : 2px solid rgb(109, 170, 177);
+}
+
+#reportBlock table{
+    margin-top: 20px;
+    text-align: center;
+    border-collapse: collapse;
+}
+#reportBlock table thead td{
+    font-size: 1.3em;
+}
+
+.commentLigne{
+    padding:3px;
+}
+
+#reportBlock table td{
+    border: 1px solid black;
+}
+.actionCell{
+    width: 25%;
+}
+
+.contentCell{
+    padding:5px;
+}
+
+.actionCell a{
+    text-decoration: none;
+    color: rgb(109, 170, 177);
+}
+

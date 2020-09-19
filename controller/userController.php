@@ -7,19 +7,19 @@ Class UserController{
 
     public function __construct(){
         $this->userManager = new UserManager();
+        $this->commentManager = new CommentManager();
     }
 
     function membreArea($pseudo, $password){
-        $userCheck = $this->userManager->userCheck($pseudo);
-        $passWordVerify = password_verify($password, $userCheck['password']);
+        $getUser = $this->userManager->userCheck($pseudo);
+        $passWordVerify = password_verify($password, $getUser['password']);
 
-        if($userCheck == false){
+        if($getUser == false){
             throw new Exception('Il yas un probleme dans votre pseudo ou votre mot de pass.');
         }else{
             if($passWordVerify){
-                $_SESSION['pseudo'] = $userCheck['pseudo'];
-                $_SESSION['id_status'] = $userCheck['id_status'];
-                $getUser = $userCheck;
+                $_SESSION['pseudo'] = $getUser['pseudo'];
+                $_SESSION['id_status'] = $getUser['id_status'];
                 $view = new ViewManager('membreArea');
                 $view->generate(array('getUser' => $getUser));
             }else{
@@ -30,8 +30,9 @@ Class UserController{
 
     function membreAreaLogin($pseudo){
         $getUser = $this->userManager->userCheck($pseudo);
+        $getReport = $this->commentManager->getReportComment();
         $view = new ViewManager('membreArea');
-        $view->generate(array('getUser' => $getUser));
+        $view->generate(array('getUser' => $getUser, 'getReport' => $getReport));
     }
 
     function logOut(){

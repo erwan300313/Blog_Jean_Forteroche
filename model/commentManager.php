@@ -50,7 +50,11 @@ class CommentManager extends Manager
         $affectedLines = $req->execute(array($report, $comment_id));
     }
 
-
-
-    
+    public function getReportComment()
+    {
+        $db=$this->dbConnect();
+        $req = $db->prepare('SELECT id, post_id, content,report, DATE_FORMAT(date_creation, \'%d/%m/%Y\') AS date_creation FROM comments WHERE report > 0 ORDER BY report DESC');
+        $req->execute(array());
+        return $req;
+    }
 }
