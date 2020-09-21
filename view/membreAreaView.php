@@ -27,8 +27,42 @@
 <?php
 if($_SESSION['id_status'] == '1'){
 ?>
-    <h3>Ajouter un billet</h3>
-    <form action="index.php?action=addPost&amp;author=<?=$getUser['pseudo']?>" method="post">
+    <div class="adminBlock">
+        <h2>Menu Administration</h2>
+        <ul class="adminMenu">
+            <li class="buttonAdminMenu addPost"><a href="index.php?action=addPostView">Ajouter un post</a></li>
+            <li class="buttonAdminMenu addPost"><a href="index.php?action=postsModeView">Modération des posts</a></li>
+            <li class="buttonAdminMenu addPost"><a href="index.php?action=commentModeView">Modération des commentaires</a></li>
+        </ul>
+    </div>
+    
+    <article class="adminBlock adminPosts">
+        <h2>Modération des posts</h2>
+        <div>
+            <table>
+                <thead>
+                    <td>Titre</td>
+                    <td>Extrait du post</td>
+                    <td>Action</td>
+                </thead>
+                <?php
+                while ($data = $getPosts->fetch())
+                {
+                    ?>
+                    <tr>
+                        <td class="commentCell contentCell"><?=$data['title']?></td>
+                        <td class="reportCell contentCell"><?=nl2br(html_entity_decode($data['content']))?></td>
+                        <td class="actionCell contentCell"><a href="index.php?action=restoreReport&amp;comment_id=<?=$data['id']?>">Modifier</a><br /><br /><a href="index.php?action=deleteComment&amp;comment_id=<?=$data['id']?>&amp;adminDelet=true">Supprimer</a></td>
+                    </tr>
+                    
+                    <?php
+                    }
+                    ?>
+            </table>
+        </div>
+    </article>
+    
+    <!-- <form action="index.php?action=addPost&amp;author=<?=$getUser['pseudo']?>" method="post">
         <label for="title">Titre du billet : </label>
         <input type="text" name="title" id="title"><br />
         <textarea name="content">Votre nouveau post ICI.</textarea>
@@ -44,15 +78,15 @@ if($_SESSION['id_status'] == '1'){
             });
         </script>
         <input type="submit" value="Poster le billet" id="connectionButton"/> 
-    </form>
-    <article id="reportBlock">
-        <h3>Modération des commentaires</h3>
+    </form> -->
+    <article class="adminBlock adminComments">
+        <h2>Modération des commentaires</h2>
         <div>
             <table>
                 <thead>
                     <td>Commentaire</td>
                     <td>Nombre de signalement</td>
-                    <td>action</td>
+                    <td>Action</td>
                 </thead>
                 <?php
                 while ($data = $getReport->fetch())
@@ -61,7 +95,7 @@ if($_SESSION['id_status'] == '1'){
                 <tr>
                     <td class="commentCell contentCell"><?=$data['content']?></td>
                     <td class="reportCell contentCell"><?=$data['report']?></td>
-                    <td class="actionCell contentCell"><a href="">Rétablir</a> /   <a href="">Supprimer</a></td>
+                    <td class="actionCell contentCell"><a href="index.php?action=restoreReport&amp;comment_id=<?=$data['id']?>">Rétablir</a><br /><br /><a href="index.php?action=deleteComment&amp;comment_id=<?=$data['id']?>&amp;adminDelet=true">Supprimer</a></td>
                 </tr>
                 
                 <?php

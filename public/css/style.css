@@ -59,7 +59,7 @@ header{
     list-style: none;
 }
 
-.menu a, footer a{
+.menu a, footer a, .adminMenu a{
     text-decoration:none;
     color:black;
     font-size: 1.3em;
@@ -251,7 +251,7 @@ input[type="text"], input[type="password"]{
     margin-top:10px;
 }
 
-.commentButton a{
+.commentButton a, .buttonAdminMenu a{
     text-decoration:none;
     color:black;
     margin-right: 5px;
@@ -264,29 +264,26 @@ input[type="text"], input[type="password"]{
     margin-top: 5px;
 }
 
-#reportBlock{
-    margin: 20px 0px;
+.adminBlock{
+    margin: 20px 20px 20px 0px;
     border-top : 2px solid rgb(109, 170, 177);
 }
 
-#reportBlock table{
+.adminBlock table{
     margin-top: 20px;
     text-align: center;
     border-collapse: collapse;
 }
-#reportBlock table thead td{
+
+.adminBlock table thead td{
     font-size: 1.3em;
 }
 
-.commentLigne{
-    padding:3px;
-}
-
-#reportBlock table td{
+.adminBlock table td{
     border: 1px solid black;
 }
 .actionCell{
-    width: 25%;
+    width: 100px;;
 }
 
 .contentCell{
@@ -297,4 +294,27 @@ input[type="text"], input[type="password"]{
     text-decoration: none;
     color: rgb(109, 170, 177);
 }
+
+.adminMenu{
+    margin:auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.buttonAdminMenu{
+    padding: 15px;
+    text-align: center;
+    list-style: none;
+}
+
+.buttonAdminMenu a{
+    box-shadow: 10px 10px 15px black;
+}
+
+.adminBlock input
+{
+    display:non;
+}
+
+
 

@@ -53,8 +53,16 @@ class CommentManager extends Manager
     public function getReportComment()
     {
         $db=$this->dbConnect();
-        $req = $db->prepare('SELECT id, post_id, content,report, DATE_FORMAT(date_creation, \'%d/%m/%Y\') AS date_creation FROM comments WHERE report > 0 ORDER BY report DESC');
+        $req = $db->prepare('SELECT id, content,report, DATE_FORMAT(date_creation, \'%d/%m/%Y\') AS date_creation FROM comments WHERE report > 0 ORDER BY report DESC');
         $req->execute(array());
         return $req;
     }
+
+    public function restoreReport($comment_id)
+    {
+        $db=$this->dbConnect();
+        $req = $db->prepare('UPDATE comments SET report = 0, date_creation = NOW() WHERE id = ?');
+        $affectedLines = $req->execute(array($comment_id));
+    }
+
 }

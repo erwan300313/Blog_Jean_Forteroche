@@ -4,14 +4,19 @@ require_once('controller.php');
 Class UserController{
 
     private $userManager;
+    private $postManager;
 
     public function __construct(){
         $this->userManager = new UserManager();
         $this->commentManager = new CommentManager();
+        $this->postManager = new PostManager();
+
     }
 
     function membreArea($pseudo, $password){
         $getUser = $this->userManager->userCheck($pseudo);
+        $getReport = $this->commentManager->getReportComment();
+        $getPosts = $this->postManager->getPosts();
         $passWordVerify = password_verify($password, $getUser['password']);
 
         if($getUser == false){
@@ -21,7 +26,7 @@ Class UserController{
                 $_SESSION['pseudo'] = $getUser['pseudo'];
                 $_SESSION['id_status'] = $getUser['id_status'];
                 $view = new ViewManager('membreArea');
-                $view->generate(array('getUser' => $getUser));
+                $view->generate(array('getUser' => $getUser, 'getReport' => $getReport, 'getPosts' => $getPosts));
             }else{
                 throw new Exception('Il yas un probleme dans votre pseudo ou votre mot de pass.');
             }
@@ -31,8 +36,9 @@ Class UserController{
     function membreAreaLogin($pseudo){
         $getUser = $this->userManager->userCheck($pseudo);
         $getReport = $this->commentManager->getReportComment();
+        $getPosts = $this->postManager->getPosts();
         $view = new ViewManager('membreArea');
-        $view->generate(array('getUser' => $getUser, 'getReport' => $getReport));
+        $view->generate(array('getUser' => $getUser, 'getReport' => $getReport, 'getPosts' => $getPosts));
     }
 
     function logOut(){

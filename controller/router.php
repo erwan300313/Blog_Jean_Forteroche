@@ -104,6 +104,9 @@ class Router{
                 elseif($_GET['action'] == 'reportComment'){
                     $this->commentController->reportComment($_GET['comment_id'], $_GET['report']);
                 }
+                elseif($_GET['action'] == 'restoreReport'){
+                    $this->commentController->restoreReport($_GET['comment_id']);
+                }
                 elseif($_GET['action'] == 'log'){
                     $view = new ViewManager('login');
                     $view->generate(array());
