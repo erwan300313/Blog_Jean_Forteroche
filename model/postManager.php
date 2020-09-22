@@ -48,11 +48,26 @@ class PostManager extends Manager
     public function addPost($author, $title, $content)
     {
         $db = $this->dbConnect();
-        $post = $db->prepare('INSERT INTO posts (author, title, content, date_creation) VALUES(?, ?, ?, NOW())');
-        $affectedLines = $post->execute(array($author, $title, $content));
+        $req = $db->prepare('INSERT INTO posts (author, title, content, date_creation) VALUES(?, ?, ?, NOW())');
+        $affectedLines = $req->execute(array($author, $title, $content));
         $addPost = $db->lastInsertId();
         return $addPost;
     }
+
+    public function editPost($post_id, $content, $title)
+    {
+        $db=$this->dbConnect();
+        $req= $db->prepare('UPDATE posts SET content = ?, title = ?, date_creation = NOW() WHERE id = ?');
+        $affectedLines = $req->execute(array($content,$title, $post_id));
+    }
+
+    public function deletePost($post_id)
+    {
+        $db=$this->dbConnect();
+        $req= $db->prepare('DELETE FROM posts WHERE id = ?');
+        $affectedLines = $req->execute(array($post_id));
+    }
+
 
 
 }

@@ -50,20 +50,33 @@ class Router{
                 elseif($_GET['action'] == 'blog'){
                     $this->postController->getPosts();
                 }
-                elseif($_GET['action'] == 'post'){
-                    if(isset($_GET['id'])){
-                            $this->postController->getPost($_GET['id']);
+                elseif($_GET['action'] == 'post' OR $_GET['action'] == 'editPostView'){
+                    if(isset($_GET['post_id'])){
+                            $this->postController->getPost($_GET['post_id']);
                     }else{
                         throw new Exception('Page Web inaccessible.');
                     }
                 }
+                elseif($_GET['action'] == 'editPost'){
+                    $this->postController->editPost($_GET['post_id'], $_POST['content'], $_POST['title']);
+                }
+                elseif($_GET['action'] == 'deletePost'){
+                    $this->postController->deletePost($_GET['post_id']);
+                }
+                elseif($_GET['action'] == 'addPostView'){
+                    $view = new ViewManager('addPost');
+                    $view->generate(array());
+                }
                 elseif($_GET['action'] == 'addPost'){
-                    if(empty($_POST['content']) OR empty($_POST['title'])){
+                     if(empty($_POST['content']) OR empty($_POST['title'])){
                         throw new Exception('Vous devez saisir un titre et un post');
                     }else{
                         $content = htmlentities($_POST['content'], ENT_QUOTES);
                         $this->postController->addPost($_GET['author'], $_POST['title'], $content);
-                    }
+                    } 
+                }
+                elseif($_GET['action'] == 'postsMode'){
+                    $this->postController->getPosts();
                 }
                 elseif($_GET['action'] == 'comments'){
                     if(isset($_GET['id'])){

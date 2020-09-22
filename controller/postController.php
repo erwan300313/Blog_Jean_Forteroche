@@ -13,20 +13,42 @@ Class PostController{
     public function getPosts()
     {
         $getPosts = $this->postManager->getPosts();
-        $view = new ViewManager('blog');
-        $view->generate(array('getPosts' => $getPosts));
-    }
 
+        if($_GET['action'] == 'blog'){
+            $view = new ViewManager('blog');
+            $view->generate(array('getPosts' => $getPosts));
+        }
+        elseif($_GET['action'] == 'postsMode' OR 'addPost' OR 'editPost' OR 'deletePost'){
+            $view = new ViewManager('postModeration');
+            $view->generate(array('getPosts' => $getPosts));
+        }
+        
+    }
     public function getPost($id)
     {
         $getPost = $this->postManager->getPost($id);
-        $view = new ViewManager('post');
-        $view->generate(array('getPost' => $getPost));
+        if($_GET['action'] == 'post'){
+            $view = new ViewManager('post');
+            $view->generate(array('getPost' => $getPost));
+        }elseif($_GET['action'] == 'editPostView'){
+            $view = new ViewManager('editPost');
+            $view->generate(array('getPost' => $getPost));
+        }
     }
 
     public function addPost($author, $title, $content){
         $addPost = $this->postManager->addPost($author, $title, $content);
-        $this->getPost($addPost);
+        $this->getPosts();
+    }
+
+    public function editPost($post_id, $content, $title){
+        $this->postManager->editPost($post_id, $content, $title);
+        $this->getPosts();
+    }
+    
+    public function deletePost($post_id){
+        $this->postManager->deletePost($post_id);
+        $this->getPosts();
     }
 
 }
