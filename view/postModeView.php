@@ -1,4 +1,4 @@
-<?php $this->title = 'Modération des posts' ?>
+<?php $this->title = 'Modération des billets' ?>
 
 <p class="homePage">
     <a href="index.php">Retour à la page d'accueil</a>

@@ -7,6 +7,7 @@ Class PostController{
 
     public function __construct(){
         $this->postManager = new PostManager();
+        $this->commentManager = new CommentManager();
 
     }
 
@@ -19,14 +20,18 @@ Class PostController{
             $view->generate(array('getPosts' => $getPosts));
         }
         elseif($_GET['action'] == 'postsMode' OR 'addPost' OR 'editPost' OR 'deletePost'){
-            $view = new ViewManager('postModeration');
+            $view = new ViewManager('postMode');
             $view->generate(array('getPosts' => $getPosts));
         }
         
     }
+    
     public function getPost($id)
     {
         $getPost = $this->postManager->getPost($id);
+        if(!$getPost){
+            throw new Exception('Le billet demander n\'existe pas .');
+        }
         if($_GET['action'] == 'post'){
             $view = new ViewManager('post');
             $view->generate(array('getPost' => $getPost));
@@ -48,6 +53,7 @@ Class PostController{
     
     public function deletePost($post_id){
         $this->postManager->deletePost($post_id);
+        $this->commentManager->deletePostComment($post_id);        
         $this->getPosts();
     }
 

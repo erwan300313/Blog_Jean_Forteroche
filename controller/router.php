@@ -120,6 +120,9 @@ class Router{
                 elseif($_GET['action'] == 'restoreReport'){
                     $this->commentController->restoreReport($_GET['comment_id']);
                 }
+                elseif($_GET['action'] == 'commentMode'){
+                    $this->commentController->getReport();
+                }
                 elseif($_GET['action'] == 'log'){
                     $view = new ViewManager('login');
                     $view->generate(array());
@@ -147,8 +150,9 @@ class Router{
                 }
                 elseif($_GET['action'] == 'logOut'){
                     $this->userController->logOut();
+                }else{
+                    throw new Exception('La page demander n\'existe pas.');
                 }
-                
             }
             else {
                 $this->indexController->home(); //Home page

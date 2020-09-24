@@ -61,7 +61,7 @@ Class CommentController{
     public function deleteComment($comment_id){
         if($_GET['adminDelet'] == 'true'){
             $this->commentManager->deleteComment($comment_id);
-            header('Location: index.php?action=membreAreaLogin#ancre');
+            header('Location: index.php?action=commentMode#ancre');
         }else{
             $this->commentManager->deleteComment($comment_id);
             header('Location: index.php?action=comments&id=' . $_GET['post_id']);
@@ -77,6 +77,12 @@ Class CommentController{
 
     public function restoreReport($comment_id){
         $this->commentManager->restoreReport($comment_id);
-        header('Location: index.php?action=membreAreaLogin#ancre');
+        header('Location: index.php?action=commentMode#ancre');
+    }
+
+    public function getReport(){
+        $report = $this->commentManager->getReportComment();
+        $view = new ViewManager('commentMode');
+        $view->generate(array('report' => $report));
     }
 }

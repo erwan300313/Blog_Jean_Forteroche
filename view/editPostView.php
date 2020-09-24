@@ -12,7 +12,7 @@
     <form action="index.php?action=editPost&amp;post_id=<?=$getPost['id']?>#ancre" method="post">
         <label for="title">Titre : </label>
         <input type="text" name="title" id="title" value="<?=$getPost['title']?>"><br />
-        <textarea name="content" rows="50"><?=$getPost['content']?></textarea>
+        <textarea id="tiny" name="content" rows="50"><?=$getPost['content']?></textarea>
         
         <input type="submit" value="Poster le billet modifier" class="addPostButton" id="connectionButton"/> 
     </form>

@@ -43,6 +43,13 @@ class CommentManager extends Manager
         $affectedLines = $req->execute(array($comment_id));
     }
 
+    public function deletePostComment($post_id)
+    {
+        $db=$this->dbConnect();
+        $req= $db->prepare('DELETE FROM comments WHERE post_id = ?');
+        $affectedLines = $req->execute(array($post_id));
+    }
+
     public function reportComment($comment_id, $report)
     {
         $db=$this->dbConnect();

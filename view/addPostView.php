@@ -14,7 +14,7 @@
     <form action="index.php?action=addPost&amp;author=<?=$_SESSION['pseudo']?>#ancre" method="post">
         <label for="title">Titre : </label>
         <input type="text" name="title" id="title"><br />
-        <textarea name="content" placeholder="Tapez votre texte ICI"></textarea>
+        <textarea id="tiny" name="content" placeholder="Tapez votre texte ICI"></textarea>
         <input type="submit" value="Poster le billet" class="addPostButton" id="connectionButton"/> 
     </form>
 </article>
