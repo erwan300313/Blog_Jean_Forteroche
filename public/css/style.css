@@ -5,13 +5,14 @@ body{
 }
 
 .headband{
+    display: flex;
     height: 40px;
     padding: 0px 12%;
     background-color: rgb(51, 51, 51);
 }
 
 .headband p{
-    margin: 0px;
+    margin: 0px 0px 0px 10px;
     padding-top: 8px;
     color: white;
     
@@ -128,7 +129,7 @@ footer a, .copyright{
     font-family: 'Unica One', cursive;
 }
 
-.section{
+.middleBlock{
     width:82%;
     margin: auto;
     display: flex;
@@ -320,3 +321,123 @@ input[type="text"], input[type="password"]{
     width: 15%;
 }
 
+@media all and (max-width: 1286px){
+
+    .adminMenu{
+        flex-direction: column;
+        padding: 0;
+    }
+}
+
+@media all and (max-width: 1134px){
+
+    .biography, .synopsys, .firstPost{
+        width: 90%;
+    }
+}
+
+@media all and (max-width: 948px){
+
+    .logIn form{
+        width: 90%;
+    }
+}
+
+@media all and (max-width: 768px){
+
+    .middleBlock{
+        width: 90%;
+    }
+
+    .leftSection{
+        padding:10px;
+    }
+
+    .leftBlock{
+        margin:0;
+    }
+
+    .lowerBlock{
+        border-left: none;
+    }
+
+    .rightSection{
+        width: 200px;
+    }
+    .biography, .synopsys, .firstPost{
+        margin: 0;
+        width: 100%;
+    }
+    .commentBlock{
+        width: 90%;
+    }
+}
+
+@media all and (max-width: 593px){
+
+    .menu{
+        width: 100%;
+        padding: 0;
+    }
+}
+@media all and (max-width: 579px){
+
+    footer{
+        height: 112px;;
+    }
+    .footer_block{
+        flex-direction: column;
+    }
+    .footer_block ul{
+        padding: 0;
+    }
+    .headband{
+        padding: 0;
+    }
+}
+
+@media all and (max-width: 467px){
+
+    .middleBlock{
+        display: block;
+        width: 90%;
+    }
+    .leftSection, .rightSection{
+        width: 100%;
+        margin: auto;
+    }
+    .leftSection{
+        padding: 0;
+    }
+    .rightSection{
+        margin-bottom: 10px;
+    }   
+     footer{
+         height: 125px;
+     }
+}
+
+@media all and (max-width: 425px){
+
+    .menu li{
+        padding: 15px 0px;
+    }
+    .headband{
+        flex-wrap: wrap;
+        justify-content: center;
+        height: 60px;
+    }
+}
+
+@media all and (max-width: 399px){
+
+    .logo img{
+        width: 80%;
+    }
+    .banniere{
+        display: none;
+    }
+    .divider{
+        height: 200px;
+    }
+}

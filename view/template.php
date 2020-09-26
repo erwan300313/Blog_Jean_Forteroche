@@ -18,6 +18,7 @@
             tinycomments_author: 'Author name',
         });
         </script>
+        <meta name="viewport" content="width=device-width" />
     </head>
         
     <body>
@@ -26,7 +27,9 @@
                 <?php
                 if(isset($_SESSION['pseudo'])){
                 ?>
-                <p>Bonjour <?=$_SESSION['pseudo']?> / <i class="fas fa-house-user"></i><a href="index.php?action=membreAreaLogin#ancre">Espace membre</a> / <i class="fas fa-sign-out-alt"></i><a href="index.php?action=logOut">Déconnexion</a></p>
+                <p>Bonjour <?=$_SESSION['pseudo']?></p>
+                <p><i class="fas fa-house-user"></i><a href="index.php?action=membreAreaLogin#ancre">Espace membre</a></p>
+                <p><i class="fas fa-sign-out-alt"></i><a href="index.php?action=logOut">Déconnexion</a></p> 
                 <?php
                 }else{
                 ?>
@@ -51,7 +54,7 @@
             <img src="public/img/jean_f.jpg" alt="Portrait de Jean Forteroche" class="portrait">
         </div>
         <div class="blockInvisible" id="ancre"></div>
-        <section class="section">
+        <section class="middleBlock">
             <section class="leftSection"> 
                 <?= $content ?>
             </section>
