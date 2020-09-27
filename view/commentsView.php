@@ -3,7 +3,6 @@
 <p class="homePage">
     <a href="index.php">Retour à la page d'accueil</a>
     <a href="index.php?action=post&amp;post_id=<?=$getExtractPost['id']?>#ancre" class="linkPrevious">Retour au Post complet</a>
-
 </p>
 
 

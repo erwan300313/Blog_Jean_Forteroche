@@ -150,6 +150,10 @@ class Router{
                 }
                 elseif($_GET['action'] == 'logOut'){
                     $this->userController->logOut();
+                }
+                elseif($_GET['action'] == 'contact'){
+                    $view = new ViewManager('contact');
+                    $view->generate(array());
                 }else{
                     throw new Exception('La page demander n\'existe pas.');
                 }

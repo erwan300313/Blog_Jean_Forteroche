@@ -41,19 +41,21 @@
             <p class="logo"><img src="public/img/logo_400.png" alt="logo de Jean"></p>
             <nav>
                 <ul class="menu">
-                    <li class="buttonMenu accueil"><a href="index.php">Accueil</a></li>
-                    <li class="buttonMenu a_propos"><a href="index.php?action=about#ancre">A propos</a></li>
-                    <li class="buttonMenu blog"><a href="index.php?action=blog#ancre">Blog</a></li>
-                    <li class="buttonMenu contact"><a href="">Contact</a></li>
+                    <li class="buttonMenu accueil" <?php if(empty($_GET['action'])){echo'id="activMenu"';}?>><a href="index.php">Accueil</a></li>
+                    <li class="buttonMenu a_propos" <?php if(isset($_GET['action']) AND $_GET['action'] == 'about'){echo'id="activMenu"';}?>><a href="index.php?action=about#ancre">A propos</a></li>
+                    <li class="buttonMenu blog" <?php if(isset($_GET['action']) AND $_GET['action'] == 'blog'){echo'id="activMenu"';}?>>
+                    <a href="index.php?action=blog#ancre">Blog</a></li>
+                    <li class="buttonMenu contact" <?php if(isset($_GET['action']) AND $_GET['action'] == 'contact'){echo'id="activMenu"';}?>><a href="index.php?action=contact#ancre">Contact</a></li>
                 </ul>
             </nav>
         </header>
         <div class="divider"></div>
         <div class="banniere">
+            
             <img src="public/img/banniere.jpg" alt="paysage Alaska" class="paysage">
             <img src="public/img/jean_f.jpg" alt="Portrait de Jean Forteroche" class="portrait">
+            <div class="blockInvisible" id="ancre"></div>
         </div>
-        <div class="blockInvisible" id="ancre"></div>
         <section class="middleBlock">
             <section class="leftSection"> 
                 <?= $content ?>

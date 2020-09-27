@@ -35,10 +35,10 @@ header{
 
 .blockInvisible{
     font-family: 'Unica One', cursive;
-    height: 229px;
+    height: 100%;
     width: 100%;
     position: absolute;
-    top: 396px;
+    top: 1px;
 }
 
 .logo{
@@ -67,7 +67,7 @@ header{
     font-family: 'Unica One', cursive;
 }
 
-.accueil{
+#activMenu{
     border-bottom: 4px solid rgb(118, 188, 195);
 }
 
@@ -149,10 +149,6 @@ footer a, .copyright{
     text-align: center;
 }
 
-.lastUser{
-    height: 130px;
-}
-
 .lastPost{
     margin-top: 20px;
     padding: 8px;;
@@ -195,13 +191,15 @@ footer a, .copyright{
 .leftBlock p{
     margin-bottom: 0px;
 }
-.homePage a{
-    color: rgb(109, 170, 177);
+
+.homePage{
+    width: 94%;
+    display:flex;
+    justify-content: space-between;
 }
 
-.linkPrevious{
-float: right;
-margin-right: 60px;
+.homePage a{
+    color: rgb(109, 170, 177);
 }
 
 .commentBlock{
@@ -211,7 +209,8 @@ margin-right: 60px;
     box-shadow: 2px 2px 2Px black;
     padding:5px;
     margin-bottom: 10px;
-    width: 60%
+    width: 60%;
+    word-wrap: break-word;
 }
 
 .commentBlock h3, .commentBlock p{
@@ -321,6 +320,12 @@ input[type="text"], input[type="password"]{
     width: 15%;
 }
 
+.formContact {
+    text-align: right;
+    width: 400px;
+    margin: auto;
+}
+
 @media all and (max-width: 1286px){
 
     .adminMenu{
@@ -349,6 +354,14 @@ input[type="text"], input[type="password"]{
         width: 90%;
     }
 
+    .homePage{
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .linkPrevious{
+        margin-top: 5px;
+    }
     .leftSection{
         padding:10px;
     }
@@ -370,6 +383,9 @@ input[type="text"], input[type="password"]{
     }
     .commentBlock{
         width: 90%;
+    }
+    .formContact{
+        width: auto;
     }
 }
 
@@ -417,7 +433,7 @@ input[type="text"], input[type="password"]{
      }
 }
 
-@media all and (max-width: 425px){
+@media all and (max-width: 419px){
 
     .menu li{
         padding: 15px 0px;
@@ -438,6 +454,7 @@ input[type="text"], input[type="password"]{
         display: none;
     }
     .divider{
-        height: 200px;
+        height: 215px;
     }
 }
+

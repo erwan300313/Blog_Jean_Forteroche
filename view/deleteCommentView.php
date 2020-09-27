@@ -2,7 +2,7 @@
 
 <p class="homePage">
     <a href="index.php">Retour à la page d'accueil</a>
-    <a href="index.php?action=post&amp;id=<?=$_GET['post_id']?>#ancre" class="linkPrevious">Retour au Post complet</a>
+    <a href="index.php?action=comments&amp;id=<?=$_GET['post_id']?>#ancre" class="linkPrevious">Retour a la page de commentaire</a>
 
 </p>
 

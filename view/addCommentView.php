@@ -12,7 +12,7 @@
     <h2><?=htmlspecialchars($getExtractPost['title'])?></h2>
     <h3>publié le <?=htmlspecialchars($getExtractPost['date_creation'])?> par <?=$getExtractPost['author']?></h3>
     <p>
-        <?=nl2br(htmlspecialchars($getExtractPost['content']))?> ...
+        <?=nl2br(html_entity_decode($getExtractPost['content']))?> ...
     </p>
     <br/>
 </article>
