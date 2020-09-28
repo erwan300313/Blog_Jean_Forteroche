@@ -1,0 +1,460 @@
+/*Style template*/
+body{
+    margin:0;
+    font-family: 'Unica One', cursive;
+}
+
+.headband{
+    display: flex;
+    height: 40px;
+    padding: 0px 12%;
+    background-color: rgb(51, 51, 51);
+}
+
+.headband p{
+    margin: 0px 0px 0px 10px;
+    padding-top: 8px;
+    color: white;
+    
+}
+
+.headband p a{
+    color: white;
+}
+
+header{
+    position: fixed;
+    width: 100%;
+    background-color: white;
+    z-index: 10;
+}
+
+.divider{
+    height: 229px;;
+}
+
+.blockInvisible{
+    font-family: 'Unica One', cursive;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 1px;
+}
+
+.logo{
+    text-align: center;
+    margin: 0px;
+}
+
+.menu{
+    margin:auto;
+    display: flex;
+    justify-content: flex-start;
+    width: 70%;
+}
+
+.buttonMenu{
+    width: 110px;
+    padding: 15px;
+    text-align: center;
+    list-style: none;
+}
+
+.menu a, footer a, .adminMenu a{
+    text-decoration:none;
+    color:black;
+    font-size: 1.3em;
+    font-family: 'Unica One', cursive;
+}
+
+#activMenu{
+    border-bottom: 4px solid rgb(118, 188, 195);
+}
+
+.banniere{
+    position: relative;
+}
+
+.paysage{ 
+    width: 100%;
+}
+
+.portrait{
+    position: absolute;
+    top: 60%;
+    left: 70%;
+    width: 12%;
+    padding:10px;
+    background-color: white;
+    position: absolute;
+}
+
+footer{
+    background-color: rgb(51, 51, 51);
+    height: 90px;
+}
+
+footer ul{
+    text-align: center;
+    list-style: none;
+}
+
+footer a, .copyright{
+    color: white;
+}
+
+.footer_block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer_menu{
+    display: flex;
+    margin:0px;
+}
+
+.footer_social_network{
+    display: flex;
+    font-size: 2.5em;
+    justify-content: space-between;
+    padding: 6px 0px 0px 100px;
+    width: 200px;
+    margin:0px;
+}
+
+.copyright{
+    margin:0px;
+    text-align: center;
+    font-family: 'Unica One', cursive;
+}
+
+.middleBlock{
+    width:82%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.leftSection{
+    width: 80%;
+}
+
+.leftSection h2, .rightSection h3{
+    text-decoration: underline;
+}
+
+.rightSection{
+    width: 249px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.lastPost{
+    margin-top: 20px;
+    padding: 8px;;
+}
+
+.lastUser, .lastPost{
+    box-shadow: 2px 2px 2Px black;
+    border: 2px solid rgb(120, 189, 196);
+}
+
+.biography, .synopsys, .firstPost{
+    width:44%;
+    margin-left: 40px;
+    text-align: justify;
+    display: inline-block;
+}
+
+.leftSection h2{
+    text-align: center;
+}
+
+.lowerBlock{
+   border-top: 2px solid  rgb(120, 189, 196); 
+   border-left: 2px solid  rgb(120, 189, 196);
+}
+
+.readMore{
+    padding: 1px 4Px;
+    background-color: rgb(120, 189, 196);
+    color: white;
+    border-radius: 5px;;
+}
+
+.leftBlock{
+    text-align: justify;
+    margin: 0px 40px;
+    border-bottom : 2px solid rgb(109, 170, 177);
+}
+
+.leftBlock p{
+    margin-bottom: 0px;
+}
+
+.homePage{
+    width: 94%;
+    display:flex;
+    justify-content: space-between;
+}
+
+.homePage a{
+    color: rgb(109, 170, 177);
+}
+
+.commentBlock{
+
+    border: 2px solid rgb(109, 170, 177);
+    border-radius:5px;
+    box-shadow: 2px 2px 2Px black;
+    padding:5px;
+    margin-bottom: 10px;
+    width: 60%;
+    word-wrap: break-word;
+}
+
+.commentBlock h3, .commentBlock p{
+    margin: 0px;
+}
+
+.logIn form{
+    width: 50%;
+    margin:auto;
+    text-align: center;
+    padding:10px;
+    font-size: 1.5em;
+    border: 2px solid rgb(109, 170, 177);
+    border-radius: 5px;
+}
+
+#connectionButton{
+    height: 30px;
+}
+
+input[type="text"], input[type="password"]{
+    margin: 10px;
+    width: 250px;
+    height: 20px;
+}
+
+.tox{
+    width: 90%;
+    margin: auto;
+}
+
+#addCommentButton{
+    height: 30px;
+    width: 180px;
+    margin: 10px 0 10px 10%;
+}
+.commentButton{
+    margin-top:10px;
+}
+
+.commentButton a, .buttonAdminMenu a{
+    text-decoration:none;
+    color:black;
+    margin-right: 5px;
+    padding: 0px 5px;
+    border: 1px solid black;
+    background-color: rgb(206, 206, 206);
+}
+
+.editCommentButton{
+    margin-top: 5px;
+}
+
+.adminBlock{
+    margin: 20px 20px 20px 0px;
+    border-top : 2px solid rgb(109, 170, 177);
+}
+
+.adminBlock table{
+    margin-top: 20px;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+.adminBlock table thead td{
+    font-size: 1.3em;
+}
+
+.adminBlock table td{
+    border: 1px solid black;
+}
+.actionCell{
+    width: 100px;;
+}
+
+.contentCell{
+    padding:5px;
+}
+
+.actionCell a{
+    text-decoration: none;
+    color: rgb(109, 170, 177);
+}
+
+.adminMenu{
+    margin:auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.buttonAdminMenu{
+    padding: 15px;
+    text-align: center;
+    list-style: none;
+}
+
+.buttonAdminMenu a{
+    box-shadow: 10px 10px 15px black;
+}
+
+.addPostButton{
+    margin: 20px 0px 0px 40px;
+    width: 250px;
+}
+
+.titleCell{
+    width: 15%;
+}
+
+.formContact {
+    text-align: right;
+    width: 400px;
+    margin: auto;
+}
+
+@media all and (max-width: 1286px){
+
+    .adminMenu{
+        flex-direction: column;
+        padding: 0;
+    }
+}
+
+@media all and (max-width: 1134px){
+
+    .biography, .synopsys, .firstPost{
+        width: 90%;
+    }
+}
+
+@media all and (max-width: 948px){
+
+    .logIn form{
+        width: 90%;
+    }
+}
+
+@media all and (max-width: 768px){
+
+    .middleBlock{
+        width: 90%;
+    }
+
+    .homePage{
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .linkPrevious{
+        margin-top: 5px;
+    }
+    .leftSection{
+        padding:10px;
+    }
+
+    .leftBlock{
+        margin:0;
+    }
+
+    .lowerBlock{
+        border-left: none;
+    }
+
+    .rightSection{
+        width: 200px;
+    }
+    .biography, .synopsys, .firstPost{
+        margin: 0;
+        width: 100%;
+    }
+    .commentBlock{
+        width: 90%;
+    }
+    .formContact{
+        width: auto;
+    }
+}
+
+@media all and (max-width: 593px){
+
+    .menu{
+        width: 100%;
+        padding: 0;
+    }
+}
+@media all and (max-width: 579px){
+
+    footer{
+        height: 112px;;
+    }
+    .footer_block{
+        flex-direction: column;
+    }
+    .footer_block ul{
+        padding: 0;
+    }
+    .headband{
+        padding: 0;
+    }
+}
+
+@media all and (max-width: 467px){
+
+    .middleBlock{
+        display: block;
+        width: 90%;
+    }
+    .leftSection, .rightSection{
+        width: 100%;
+        margin: auto;
+    }
+    .leftSection{
+        padding: 0;
+    }
+    .rightSection{
+        margin-bottom: 10px;
+    }   
+     footer{
+         height: 125px;
+     }
+}
+
+@media all and (max-width: 419px){
+
+    .menu li{
+        padding: 15px 0px;
+    }
+    .headband{
+        flex-wrap: wrap;
+        justify-content: center;
+        height: 60px;
+    }
+}
+
+@media all and (max-width: 399px){
+
+    .logo img{
+        width: 80%;
+    }
+    .banniere{
+        display: none;
+    }
+    .divider{
+        height: 215px;
+    }
+}
+
